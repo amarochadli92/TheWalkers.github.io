@@ -1,0 +1,193 @@
+/* Start Global Rules */
+
+:root {
+    --first-Color: #0e185f;
+    --second-Color: #2fa4ff;
+    --third-Color: #00ffdd;
+    --fourth-Color: #e8ffc2;
+    --transition-hover: 0.5s ease-in-out;
+}
+
+body {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background-color: var(--first-Color);
+    max-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Global Rules */
+
+
+/* Start Header */
+
+header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--fourth-Color);
+    overflow: hidden;
+}
+
+header .logo .spider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--second-Color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+header .logo .spider i {
+    font-size: 2rem;
+    color: var(--first-Color);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+header ul li {
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+header ul li i {
+    color: var(--second-Color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+header ul li a {
+    color: var(--fourth-Color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition-hover);
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+header ul li:after {
+    content: "";
+    position: absolute;
+    background-color: var(--second-Color);
+    height: 2px;
+    width: 100%;
+    bottom: 0%;
+    left: -100%;
+    transition: var(--transition-hover);
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+header ul li:hover a,
+header ul li.active a {
+    color: var(--second-Color);
+}
+
+header ul li.active a {
+    color: var(--second-Color);
+}
+
+header nav .register button {
+    background: var(--second-Color);
+    border: 2px solid var(--second-Color);
+    padding: 5px 10px;
+    color: var(--fourth-Color);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: var(--transition-hover);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+header nav .register button:hover {
+    background: transparent;
+}
+
+
+/* End Header */

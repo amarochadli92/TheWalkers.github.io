@@ -1,0 +1,51 @@
+/* Start Header */
+
+@media (max-width: 768px) {
+    header nav ul {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+    header nav ul li span {
+        display: none;
+    }
+    header nav ul li::after {
+        display: none;
+    }
+    header nav ul li {
+        overflow: visible;
+    }
+    header nav ul li:hover,
+    header nav ul li.active:hover {
+        color: red;
+    }
+}
+
+@media (min-width: 768px) {
+    header ul li:hover,
+    header ul li.active {
+        padding-left: 30px;
+    }
+    header ul li:hover::after,
+    header ul li:hover i {
+        left: 0;
+    }
+    header ul li.active::after {
+        left: 0;
+    }
+    header ul li.active i {
+        left: 0;
+    }
+}
+
+
+/* End Header */
