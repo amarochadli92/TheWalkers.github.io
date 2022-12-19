@@ -10,8 +10,7 @@
 
 body {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background-color: var(--first-Color);
-    max-height: 100vh;
+    min-height: 100vh;
 }
 
 * {
@@ -62,9 +61,15 @@ body {
 /* Start Header */
 
 header {
+    background-color: #0e185f;
+}
+
+header .container {
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
 
 header .logo {
@@ -96,98 +101,421 @@ header .logo .spider i {
 
 header nav {
     display: flex;
-    align-items: center;
     gap: 10px;
-}
-
-header nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-header ul li {
-    position: relative;
-    padding: 5px;
     overflow: hidden;
-    cursor: pointer;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
+    height: 100%;
+    align-items: center;
 }
 
-header ul li i {
-    color: var(--second-Color);
-    font-size: 1.5rem;
-    position: absolute;
-    left: -100%;
-    top: 0;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-}
-
-header ul li a {
+header nav a {
     color: var(--fourth-Color);
-    font-size: 1rem;
-    font-weight: 500;
+    display: flex;
+    gap: 5px;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+    font-weight: regular;
+    text-transform: uppercase;
     transition: var(--transition-hover);
     -webkit-transition: var(--transition-hover);
     -moz-transition: var(--transition-hover);
     -ms-transition: var(--transition-hover);
     -o-transition: var(--transition-hover);
-}
-
-header ul li:after {
-    content: "";
-    position: absolute;
-    background-color: var(--second-Color);
-    height: 2px;
-    width: 100%;
-    bottom: 0%;
-    left: -100%;
-    transition: var(--transition-hover);
-    -webkit-transition: var(--transition-hover);
-    -moz-transition: var(--transition-hover);
-    -ms-transition: var(--transition-hover);
-    -o-transition: var(--transition-hover);
-}
-
-header ul li:hover a,
-header ul li.active a {
-    color: var(--second-Color);
-}
-
-header ul li.active a {
-    color: var(--second-Color);
-}
-
-header nav .register button {
-    background: var(--second-Color);
-    border: 2px solid var(--second-Color);
-    padding: 5px 10px;
-    color: var(--fourth-Color);
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: var(--transition-hover);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    -webkit-transition: var(--transition-hover);
-    -moz-transition: var(--transition-hover);
-    -ms-transition: var(--transition-hover);
-    -o-transition: var(--transition-hover);
-}
-
-header nav .register button:hover {
-    background: transparent;
 }
 
 
 /* End Header */
+
+
+/* Start Intro-Company */
+
+.intro-company {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    height: calc(100vh - 80px);
+    background-image: url("/img/about.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.intro-company .intro {
+    width: 80%;
+    margin-bottom: 170px;
+    padding: 10px 25px;
+    color: var(--fourth-Color);
+    background-color: rgb(255, 255, 255, 0.1);
+    filter: blur(0.2px);
+    -webkit-filter: blur(0.2px);
+    position: relative;
+    z-index: 2;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.intro-company .intro .text h2 {
+    line-height: 1.4;
+    opacity: 0.5;
+}
+
+.intro-company .intro .text h2 i {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.intro-company .intro .text h2 i:nth-child(1) {
+    color: blue;
+}
+
+.intro-company .intro .text h2 i:nth-child(2) {
+    color: green !important;
+}
+
+.intro-company .intro .text h2 i:nth-child(3) {
+    color: black;
+}
+
+.intro-company .intro .text h2 i:nth-child(3) {
+    color: yellow;
+}
+
+.intro-company .intro .text h2 i:nth-child(4) {
+    color: magenta;
+}
+
+.intro-company .intro .shop {
+    background-color: var(--second-Color);
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--fourth-Color);
+    padding: 5px 10px;
+    width: 50%;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: var(--transition-hover);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: 0.3;
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+.intro-company .intro .shop i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.intro-company .intro .shop:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 10px var(--second-Color);
+}
+
+.hero {
+    width: 100%;
+    position: absolute;
+    bottom: -260%;
+    z-index: 1;
+}
+
+
+/* End Intro-Company */
+
+.band {
+    padding-top: 100px;
+    height: 100vh;
+    background-image: linear-gradient(150deg, var(--second-Color), black 50%);
+}
+
+
+/* .band #tns1-ow {
+    width: 450px;
+    height: 550px;
+    padding: 20px;
+    padding: 35px 25px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.band #tns1-ow #tns1-mw #tns1-iw #tns1 .tns-item {
+    position: relative;
+}
+
+.band #tns1-ow #tns1-mw #tns1-iw #tns1 .tns-slide-active::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 110px;
+    background-color: black;
+    transform: skewX(56deg);
+    right: -81px;
+}
+
+.band #tns1-ow #tns1-mw #tns1-iw #tns1 .tns-slide-active::after {
+    content: "Sold -40%";
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    right: 0;
+    top: 30px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    transform: rotate(32deg);
+    -webkit-transform: rotate(32deg);
+    -moz-transform: rotate(32deg);
+    -ms-transform: rotate(32deg);
+    -o-transform: rotate(32deg);
+}
+
+.band #tns1-ow>button {
+    display: none;
+}
+
+.band #tns1-ow>.tns-controls {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.band #tns1-ow>.tns-controls button {
+    background-color: transparent;
+    font-size: 2rem;
+    border: none;
+    color: rgb(255, 255, 255, 0.5);
+    font-weight: bold;
+    transition: var(--transition-hover);
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+.band #tns1-ow>.tns-controls button:hover {
+    color: var(--second-Color);
+}
+
+.band #tns1-ow>.tns-nav {
+    position: absolute;
+    z-index: 5;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.band #tns1-ow>.tns-nav button.tns-nav-active {
+    background-color: var(--second-Color);
+}
+
+.band #tns1-ow>.tns-nav button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 1px solid rgb(255, 255, 255, 0.3);
+}
+
+.band .my-slider div {
+    overflow: hidden;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.band .my-slider div img {
+    object-fit: fill;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+} */
+
+.band h2 {
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 2px solid rgb(255, 255, 255, 0.1);
+    width: fit-content;
+    color: var(--fourth-Color);
+    margin: 0 auto 50px;
+    padding: 10px 70px;
+    position: relative;
+    border-radius: 5px;
+    transition: 0.3s !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: 0.3s !important;
+    -moz-transition: 0.3s !important;
+    -ms-transition: 0.3s !important;
+    -o-transition: 0.3s !important;
+    -webkit-border-radius: 5px;
+}
+
+.band h2::before {
+    left: -30%;
+}
+
+.band h2::after {
+    right: -30%;
+}
+
+.band h2::after,
+.band h2::before {
+    content: "\f714";
+    font-weight: 600;
+    font-family: "Font Awesome 6 FREE";
+    position: absolute;
+    transition: 0.3s !important;
+    -webkit-transition: 0.3s !important;
+    -moz-transition: 0.3s !important;
+    -ms-transition: 0.3s !important;
+    -o-transition: 0.3s !important;
+}
+
+.band h2:hover::before {
+    left: 10px;
+}
+
+.band h2:hover::after {
+    right: 10px;
+}
+
+.band .tns-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px 40px !important;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.band .tns-outer>button {
+    display: none;
+}
+
+.band .tns-outer .tns-nav {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.band .tns-outer .tns-nav button {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 1px solid rgb(255, 255, 255, 0.4);
+    filter: blur(1px);
+    transition: var(--transition-hover);
+    border-radius: 50%;
+    -webkit-filter: blur(1px);
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.band>*:focus-visible {
+    outline: none;
+}
+
+.band .tns-outer .tns-nav button.tns-nav-active {
+    border: none;
+    background-color: var(--second-Color);
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
+
+.band .tns-outer .tns-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.band .tns-outer .tns-controls>button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: rgb(255, 255, 255, 0.2);
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    transition: filter 0.2s;
+    transition: color 0.4s;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+}
+
+.band .tns-outer .tns-controls>button:hover {
+    color: var(--second-Color);
+}
+
+.band .tns-outer:hover .tns-controls>button {
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
+
+.band .tns-outer .tns-controls>button:first-child {
+    margin-left: 3px;
+}
+
+.band .tns-outer .tns-controls>button:last-child {
+    margin-right: 3px;
+}
+
+.band #rewind {
+    display: flex;
+    gap: 1%;
+}
+
+.band #rewind div,
+.band #rewind div img {
+    width: calc(100% - 2% / 3);
+    height: 500px;
+}

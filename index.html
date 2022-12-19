@@ -14,45 +14,81 @@
     <!-- For Font Awesome 6 Free Library  -->
     <link rel="stylesheet" href="css/all.css" />
     <!-- For Google Fonts  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
     <main>
-        <header class="container">
-            <div class="logo">
-                <div class="spider">
-                    <i class="fa-solid fa-spider"></i>
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <div class="spider">
+                        <i class="fa-solid fa-spider"></i>
+                    </div>
+                    <h1>Games</h1>
                 </div>
-                <h1>Games</h1>
+                <nav>
+                    <a class="link active" href="#"><i class="fa-solid fa-house"></i>Home</a>
+                    <a class="link " href="#"><i class="fa-solid fa-address-card"></i>About</a>
+                    <a class="link " href="#"><i class="fa-solid fa-address-card"></i>Shop Now</a>
+                    <a class="link" href="#"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li class="active">
-                        <i class="fa-solid fa-house"></i><a href="#"><span>Home</span></a>
-                    </li>
-                    <li>
-                        <i class="fa-brands fa-shopify"></i>
-                        <a href="#"><span>Shop</span></a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-address-card"></i>
-                        <a href="#"><span>About</span></a>
-                    </li>
-                    <li>
-                        <i class="fa-regular fa-id-badge"></i>
-                        <a href="#"> <span>Contact</span></a>
-                    </li>
-                </ul>
-
-                <div class="register">
-                    <button class="sign-in">Sign In</button>
-                    <button class="sign-up">Sign Up</button>
-                </div>
-            </nav>
         </header>
+        <!-- Start Intro Company -->
+        <section class="intro-company">
+            <div class="container">
+                <!-- <div class="my-slider">
+                    <div><img src="img/pub-intro/halo-5.jpeg" alt=""></div>
+                    <div><img src="img/pub-intro/mario.png" alt=""></div>
+                    <div><img src="img/pub-intro/watch dogs_.jpg" alt=""></div>
+                    <div><img src="img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
+                </div> -->
+
+                <!-- or ul.my-slider > li -->
+                <div class="intro">
+                    <div class="text">
+                        <h1>Welcome Gamers To Spider Games</h1>
+                        <h2>
+                            Spider games Is Platform For Sell Games Video Like Playstion
+                            <i class="fa-brands fa-playstation"></i> & Xbox
+                            <i class="fa-brands fa-xbox"></i> & Nitando
+                            <i class="fa-sharp fa-solid fa-gamepad"></i>
+                        </h2>
+                    </div>
+                    <button class="shop"> <i class="fa-brands fa-shopify"></i>Shop Now</button>
+                </div>
+                <div class="hero">
+                    <img src="/img/intro2.png">
+                </div>
+            </div>
+        </section>
+        <!-- Start Intro Company -->
+        <div class="band">
+
+            <div class="container">
+                <h2>Sold Out</h2>
+                <div id="rewind">
+                    <div><img src="/img/pub-intro/halo-5.jpeg" alt="" srcset=""></div>
+                    <div><img src="/img/pub-intro/mario.png" alt=""> </div>
+                    <div><img src="/img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
+                    <div><img src="/img/pub-intro/playstation5-ps5-black-controller-11642917601fxwaemltka.png" alt="" srcset=""></div>
+                    <div><img src="/img/pub-intro/ps5-04_4x.png" alt="" srcset=""></div>
+                    <div><img src="/img/pub-intro/watch dogs_.jpg" alt="" srcset=""></div>
+                    <div><img src="/img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
+                    <div><img src="/img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
+                </div>
+            </div>
+
+            <!-- width: 371px;
+height: 601px; -->
+        </div>
     </main>
     <script src="src/index.js"></script>
-</body>
+    <script type="module" src="src/sliders.js"></script>
+
+
 
 </html>
