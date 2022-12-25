@@ -14,40 +14,49 @@
     <!-- For Font Awesome 6 Free Library  -->
     <link rel="stylesheet" href="css/all.css" />
     <!-- For Google Fonts  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link class="t" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
 
 </head>
 
 <body>
     <main>
+        <!--_____________________START HEADER_____________________-->
         <header>
             <div class="container">
+                <!-- START LOGO -->
                 <div class="logo">
                     <div class="spider">
                         <i class="fa-solid fa-spider"></i>
                     </div>
                     <h1>Games</h1>
                 </div>
+                <!-- START LOGO -->
+                <!-- START NAV BAR -->
                 <nav>
-                    <a class="link active" href="#"><i class="fa-solid fa-house"></i>Home</a>
-                    <a class="link " href="#"><i class="fa-solid fa-address-card"></i>About</a>
+                    <a class="link active" href="#intro-company"><i class="fa-solid fa-house"></i>Home</a>
+                    <a class="link" href="#discount"><i class="fa-solid fa-tags"></i>Discount</a>
                     <a class="link " href="#"><i class="fa-solid fa-address-card"></i>Shop Now</a>
+                    <a class="link " href="#"><i class="fa-solid fa-address-card"></i>About</a>
                     <a class="link" href="#"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
                 </nav>
+                <!-- END NAV BAR -->
+
+                <!-- START BASKET SHOPPING + LOGIN BUTTON  -->
+                <div class="info">
+                    <button class="basket-shopping"><i class="fa-solid fa-basket-shopping"></i>Basket Shop</button>
+                    <button class="login"><i class="fa-solid fa-right-to-bracket"></i>Login</button>
+                </div>
+                <!-- END BASKET SHOPPING + LOGIN BUTTON  -->
             </div>
         </header>
-        <!-- Start Intro Company -->
-        <section class="intro-company">
-            <div class="container">
-                <!-- <div class="my-slider">
-                    <div><img src="img/pub-intro/halo-5.jpeg" alt=""></div>
-                    <div><img src="img/pub-intro/mario.png" alt=""></div>
-                    <div><img src="img/pub-intro/watch dogs_.jpg" alt=""></div>
-                    <div><img src="img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
-                </div> -->
+        <!--_____________________ END HEADER _____________________-->
+        <!--_____________________ START INTRO COMPANY _____________________-->
+        <section id="intro-company" class="intro-company">
 
-                <!-- or ul.my-slider > li -->
+            <img class="hero hero-one" src="/img/intro.png">
+            <img class="hero hero-two" src="/img/intro2.png">
+            <div class="container">
                 <div class="intro">
                     <div class="text">
                         <h1>Welcome Gamers To Spider Games</h1>
@@ -60,31 +69,112 @@
                     </div>
                     <button class="shop"> <i class="fa-brands fa-shopify"></i>Shop Now</button>
                 </div>
-                <div class="hero">
-                    <img src="/img/intro2.png">
-                </div>
             </div>
         </section>
-        <!-- Start Intro Company -->
-        <div class="band">
-
+        <!--_____________________ END INTRO COMPANY _____________________-->
+        <!--____________________ START DISCOUNT SECTION _____________________-->
+        <section id="discount">
             <div class="container">
-                <h2>Sold Out</h2>
+                <h2>Discount</h2>
+                <!--START SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
                 <div id="rewind">
-                    <div><img src="/img/pub-intro/halo-5.jpeg" alt="" srcset=""></div>
-                    <div><img src="/img/pub-intro/mario.png" alt=""> </div>
-                    <div><img src="/img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
-                    <div><img src="/img/pub-intro/playstation5-ps5-black-controller-11642917601fxwaemltka.png" alt="" srcset=""></div>
-                    <div><img src="/img/pub-intro/ps5-04_4x.png" alt="" srcset=""></div>
-                    <div><img src="/img/pub-intro/watch dogs_.jpg" alt="" srcset=""></div>
-                    <div><img src="/img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
-                    <div><img src="/img/pub-intro/resident-evil-2.png" alt="" srcset=""></div>
+                    <!-- <div>
+                        <img src="/img/pub-intro/halo-5.jpeg" alt="">
+                        <div class="product-info">
+                            <div class="details">
+                                <span class="name">Resident Evil 2</span>
+                                <span class="Platfrom">Playstation 4</span>
+                                <span class="prix">
+                                    <span class="old">40£<i class="fa-solid fa-money-bill-wave"></i></span>
+                                <span class="now">15.99$ <i class="fa-solid fa-money-bill-wave"></i></span>
+                                </span>
+                            </div>
+                            <div class="buy">
+                                <button><i class="fa-brands fa-shopify"></i> Add To Panier</button>
+                                <div class="quantity">
+                                    <span>Choose Quantity</span>
+                                    <select name="quantity" id="">
+                                        <option value="1">1</option>
+                                        <option value="3">3</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/img/pub-intro/mario.png" alt="">
+                        <div class="product-info">
+                            <div class="details">
+                                <span class="product">Resident Evil 2</span>
+                                <span class="Platfrom">Playstation 4</span>
+                                <div class="prix">
+                                    <span class="old">40$ <i class="fa-solid fa-money-bill-wave"></i></span>
+                                    <span class="now">15.99$ <i class="fa-solid fa-money-bill-wave"></i></span>
+                                </div>
+                            </div>
+                            <div class="buy">
+                                <button><i class="fa-brands fa-shopify"></i> Add To Panier</button>
+                                <div class="quantity">
+                                    <span>Choose Quantity</span>
+                                    <select name="quantity" id="">
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/pub-intro/playstation5-ps5-black-controller-11642917601fxwaemltka.png" alt="">
+                        <div class="product-info">
+                            <div class="details">
+                                <span class="product">Resident Evil 2</span>
+                                <span class="Platfrom">Playstation 4</span>
+                                <div class="prix">
+                                    <span class="old">40$ <i class="fa-solid fa-money-bill-wave"></i></span>
+                                </div>
+                                <span class="now">15.99$ <i class="fa-solid fa-money-bill-wave"></i></span>
+                            </div>
+                            <div class="buy">
+                                <button><i class="fa-brands fa-shopify"></i> Add To Panier</button>
+                                <div class="quantity">
+                                    <span>Choose Quantity</span>
+                                    <select name="quantity" id="">
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i id="done" class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
-            </div>
-
-            <!-- width: 371px;
-height: 601px; -->
-        </div>
+                <!-- END SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
+        </section>
+        <!--_____________________END DISCOUNT SECTION_____________________-->
     </main>
     <script src="src/index.js"></script>
     <script type="module" src="src/sliders.js"></script>

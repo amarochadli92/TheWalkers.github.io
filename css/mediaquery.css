@@ -88,6 +88,29 @@
     }
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+    header .logo .spider {
+        width: 40px;
+        height: 40px;
+    }
+    header .logo .spider i {
+        font-size: 1.5rem;
+    }
+    header .logo h1 {
+        font-size: 1rem;
+    }
+    header nav a {
+        font-size: 0.6rem;
+    }
+    header .info {
+        flex-direction: column;
+    }
+    header .info button {
+        font-size: 0.7rem;
+        padding: 2px 5px;
+    }
+}
+
 
 /* End Header */
 
@@ -100,9 +123,24 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
-    .hero {
-        top: 0;
-        left: -50%;
+@media (min-width: 768px) and (max-width: 1200px) {
+    .hero-one {
+        right: -100%;
+        width: 90%;
+        top: 25%;
+    }
+    .hero-one#coming {
+        right: -35%;
+    }
+    .hero-two {
+        width: 90%;
+        left: -100%;
+        top: 10%;
+    }
+    .hero-two#coming {
+        left: -55%;
+    }
+    .hero-three {
+        bottom: 0%;
     }
 }

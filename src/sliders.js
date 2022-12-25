@@ -24,6 +24,8 @@ var slider = tns({
         },
     },
 });
-let btn = document.querySelectorAll(".band .tns-outer .tns-controls button");
+let btn = document.querySelectorAll(
+    "#discount .tns-outer .tns-controls button"
+);
 btn[0].innerHTML = '<i class="fa-solid fa-circle-left"></i>';
 btn[1].innerHTML = '<i class="fa-solid fa-circle-right"></i>';

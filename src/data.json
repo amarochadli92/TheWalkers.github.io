@@ -1,0 +1,55 @@
+[{
+        "name": "BluRay Watch Dogs 2",
+        "discount": 25,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/pngegg (1).png",
+        "quantity": 3
+    },
+    {
+        "name": "Controllers",
+        "discount": 25,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 5",
+        "img": "../img/pub-intro/pngegg (2).png",
+        "quantity": 10
+    },
+    {
+        "name": "BlueRay God Of War |||",
+        "discount": 25,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/pngegg (3).png",
+        "quantity": 10
+    },
+    {
+        "name": "BlueRay God  no no Of War |||",
+        "discount": false,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/pngegg (3).png",
+        "quantity": 10
+    },
+    {
+        "name": "BlueRay God  no no Of War |||",
+        "discount": 10,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/pngegg (4).png",
+        "quantity": 10
+    },
+    {
+        "name": "BlueRay God  no no Of War |||",
+        "discount": 10,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/pngegg (5).png",
+        "quantity": 10
+    }
+]

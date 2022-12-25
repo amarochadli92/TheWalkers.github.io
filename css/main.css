@@ -1,10 +1,11 @@
-/* Start Global Rules */
+/*********************** START GLOBAL RULES ***************************/
 
 :root {
     --first-Color: #0e185f;
     --second-Color: #2fa4ff;
     --third-Color: #00ffdd;
     --fourth-Color: #e8ffc2;
+    --special-Box-Shadow: 0px 0px 51px 2px inset var(--first-Color);
     --transition-hover: 0.5s ease-in-out;
 }
 
@@ -55,13 +56,15 @@ body {
 }
 
 
-/* End Global Rules */
+/*********************** END GLOBAL RULES ***************************/
 
 
-/* Start Header */
+/*********************** START HEADER ***************************/
 
 header {
     background-color: #0e185f;
+    position: relative;
+    z-index: 3;
 }
 
 header .container {
@@ -105,6 +108,8 @@ header nav {
     overflow: hidden;
     height: 100%;
     align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 
 header nav a {
@@ -123,11 +128,47 @@ header nav a {
     -o-transition: var(--transition-hover);
 }
 
+header .details {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
 
-/* End Header */
+header .details button {
+    background-color: rgb(0, 0, 0, 0.3);
+    border: none;
+    color: var(--fourth-Color);
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition-hover);
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 3px rgb(0, 0, 0, 0.3);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+header .details button:hover {
+    background-color: var(--second-Color);
+    box-shadow: 0px 0px 0px 3px rgb(0, 0, 0, 0.3);
+    font-weight: bolder;
+}
+
+header .details button i {
+    margin-right: 5px;
+}
 
 
-/* Start Intro-Company */
+/*********************** End HEADER ***************************/
+
+
+/*********************** START INTRO-COMPANY ***************************/
 
 .intro-company {
     padding-top: 70px;
@@ -137,13 +178,18 @@ header nav a {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
     position: relative;
+    overflow-x: clip;
+}
+
+.intro-company .container {
+    height: 100%;
 }
 
 .intro-company .intro {
+    position: absolute;
+    margin: 0 auto;
     width: 80%;
-    margin-bottom: 170px;
     padding: 10px 25px;
     color: var(--fourth-Color);
     background-color: rgb(255, 255, 255, 0.1);
@@ -152,11 +198,22 @@ header nav a {
     position: relative;
     z-index: 2;
     border: 2px solid rgba(255, 255, 255, 0.1);
+    top: -100%;
+    transform: translateY(-20%);
+    transition: 0.5s 1s ease-out;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+    -webkit-transition: 0.5s 1s ease-out;
+    -moz-transition: 0.5s 1s ease-out;
+    -ms-transition: 0.5s 1s ease-out;
+    -o-transition: 0.5s 1s ease-out;
+}
+
+.intro-company .intro#coming {
+    top: 20%;
 }
 
 .intro-company .intro .text h2 {
@@ -223,174 +280,82 @@ header nav a {
 }
 
 .hero {
-    width: 100%;
     position: absolute;
-    bottom: -260%;
-    z-index: 1;
+    top: 15%;
+    transition: 1s ease-out;
+    -webkit-transition: 1s ease-out;
+    -moz-transition: 1s ease-out;
+    -ms-transition: 1s ease-out;
+    -o-transition: 1s ease-out;
+}
+
+.hero-one {
+    position: absolute;
+    width: 60%;
+    right: -100%;
+}
+
+.hero-two {
+    position: absolute;
+    width: 54%;
+    left: -100%;
+}
+
+.hero-one#coming {
+    right: -20%;
+}
+
+.hero-two#coming {
+    left: -20%;
 }
 
 
-/* End Intro-Company */
+/*********************** End Intro-Company ***************************/
 
-.band {
+
+/*********************** Start Discount ***************************/
+
+#discount {
     padding-top: 100px;
     height: 100vh;
     background-image: linear-gradient(150deg, var(--second-Color), black 50%);
 }
 
-
-/* .band #tns1-ow {
-    width: 450px;
-    height: 550px;
-    padding: 20px;
-    padding: 35px 25px !important;
-    display: flex;
-    justify-content: center;
-}
-
-.band #tns1-ow #tns1-mw #tns1-iw #tns1 .tns-item {
-    position: relative;
-}
-
-.band #tns1-ow #tns1-mw #tns1-iw #tns1 .tns-slide-active::before {
-    content: "";
-    position: absolute;
-    width: 150px;
-    height: 110px;
-    background-color: black;
-    transform: skewX(56deg);
-    right: -81px;
-}
-
-.band #tns1-ow #tns1-mw #tns1-iw #tns1 .tns-slide-active::after {
-    content: "Sold -40%";
-    position: absolute;
+#discount h2 {
+    text-transform: uppercase;
     width: fit-content;
-    height: fit-content;
-    background-color: transparent;
-    right: 0;
-    top: 30px;
-    font-weight: bold;
-    font-size: 1.3rem;
-    transform: rotate(32deg);
-    -webkit-transform: rotate(32deg);
-    -moz-transform: rotate(32deg);
-    -ms-transform: rotate(32deg);
-    -o-transform: rotate(32deg);
-}
-
-.band #tns1-ow>button {
-    display: none;
-}
-
-.band #tns1-ow>.tns-controls {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.band #tns1-ow>.tns-controls button {
-    background-color: transparent;
-    font-size: 2rem;
-    border: none;
-    color: rgb(255, 255, 255, 0.5);
-    font-weight: bold;
-    transition: var(--transition-hover);
-    -webkit-transition: var(--transition-hover);
-    -moz-transition: var(--transition-hover);
-    -ms-transition: var(--transition-hover);
-    -o-transition: var(--transition-hover);
-}
-
-.band #tns1-ow>.tns-controls button:hover {
-    color: var(--second-Color);
-}
-
-.band #tns1-ow>.tns-nav {
-    position: absolute;
-    z-index: 5;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.band #tns1-ow>.tns-nav button.tns-nav-active {
-    background-color: var(--second-Color);
-}
-
-.band #tns1-ow>.tns-nav button {
-    width: 20px;
-    height: 20px;
-    border: none;
-    border-radius: 50%;
+    margin: 0 auto;
     background-color: rgb(255, 255, 255, 0.1);
-    border: 1px solid rgb(255, 255, 255, 0.3);
-}
-
-.band .my-slider div {
-    overflow: hidden;
-    width: 400px;
-    height: 500px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-
-.band .my-slider div img {
-    object-fit: fill;
-    width: 400px;
-    height: 500px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-} */
-
-.band h2 {
-    background-color: rgb(255, 255, 255, 0.1);
-    border: 2px solid rgb(255, 255, 255, 0.1);
-    width: fit-content;
+    border: 1px solid rgb(255, 255, 255, 0.1);
     color: var(--fourth-Color);
-    margin: 0 auto 50px;
-    padding: 10px 70px;
     position: relative;
-    border-radius: 5px;
-    transition: 0.3s !important;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    -webkit-transition: 0.3s !important;
-    -moz-transition: 0.3s !important;
-    -ms-transition: 0.3s !important;
-    -o-transition: 0.3s !important;
-    -webkit-border-radius: 5px;
+    padding: 10px 70px;
+    z-index: 5;
+    border-radius: 8px;
+    transition: 0.3s 0.3s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    -webkit-transition: 0.3s 0.3s;
+    -moz-transition: 0.3s 0.3s;
+    -ms-transition: 0.3s 0.3s;
+    -o-transition: 0.3s 0.3s;
 }
 
-.band h2::before {
+#discount h2::before {
     left: -30%;
 }
 
-.band h2::after {
+#discount h2::after {
     right: -30%;
 }
 
-.band h2::after,
-.band h2::before {
-    content: "\f714";
-    font-weight: 600;
-    font-family: "Font Awesome 6 FREE";
+#discount h2::after,
+#discount h2::before {
+    content: "\f091";
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
     position: absolute;
     transition: 0.3s !important;
     -webkit-transition: 0.3s !important;
@@ -399,21 +364,21 @@ header nav a {
     -o-transition: 0.3s !important;
 }
 
-.band h2:hover::before {
+#discount h2:hover::before {
     left: 10px;
 }
 
-.band h2:hover::after {
+#discount h2:hover::after {
     right: 10px;
 }
 
-.band .tns-outer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#discount h2:hover {
+    background-color: var(--second-Color);
+}
+
+#discount .tns-outer {
     position: relative;
     padding: 20px 40px !important;
-    background-color: rgb(255, 255, 255, 0.1);
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -421,19 +386,20 @@ header nav a {
     -o-border-radius: 15px;
 }
 
-.band .tns-outer>button {
+#discount .tns-outer>button {
     display: none;
 }
 
-.band .tns-outer .tns-nav {
+#discount .tns-outer .tns-nav {
+    display: flex !important;
     width: 60%;
-    display: flex;
+    margin: 0 auto;
     justify-content: center;
     gap: 5px;
     margin-bottom: 30px;
 }
 
-.band .tns-outer .tns-nav button {
+#discount .tns-outer .tns-nav button {
     width: 20px;
     height: 20px;
     background-color: rgb(255, 255, 255, 0.1);
@@ -452,23 +418,24 @@ header nav a {
     -o-border-radius: 50%;
 }
 
-.band>*:focus-visible {
+#discount>*:focus-visible {
     outline: none;
 }
 
-.band .tns-outer .tns-nav button.tns-nav-active {
+#discount .tns-outer .tns-nav button.tns-nav-active {
     border: none;
     background-color: var(--second-Color);
     filter: blur(0);
     -webkit-filter: blur(0);
 }
 
-.band .tns-outer .tns-controls {
+#discount .tns-outer .tns-controls {
     width: 100%;
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     z-index: 5;
     position: absolute;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
@@ -477,13 +444,14 @@ header nav a {
     -o-transform: translateY(-50%);
 }
 
-.band .tns-outer .tns-controls>button {
+#discount .tns-outer .tns-controls>button {
     background-color: transparent;
+    color: var(--second-Color) !important;
+    position: relative;
+    overflow: hidden;
     border: none;
     font-size: 2rem;
     color: rgb(255, 255, 255, 0.2);
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
     transition: filter 0.2s;
     transition: color 0.4s;
     -webkit-transition: color 0.4s;
@@ -492,30 +460,253 @@ header nav a {
     -o-transition: color 0.4s;
 }
 
-.band .tns-outer .tns-controls>button:hover {
-    color: var(--second-Color);
-}
-
-.band .tns-outer:hover .tns-controls>button {
+#discount .tns-outer:hover .tns-controls>button {
     filter: blur(0);
     -webkit-filter: blur(0);
 }
 
-.band .tns-outer .tns-controls>button:first-child {
+#discount .tns-outer .tns-controls>button:first-child {
     margin-left: 3px;
 }
 
-.band .tns-outer .tns-controls>button:last-child {
+#discount .tns-outer .tns-controls>button:last-child {
     margin-right: 3px;
 }
 
-.band #rewind {
+#discount #rewind {
     display: flex;
     gap: 1%;
 }
 
-.band #rewind div,
-.band #rewind div img {
-    width: calc(100% - 2% / 3);
+#discount #rewind>div {
+    position: relative;
+    /* width: calc((100% - 2%) / 3); */
+    /* padding: 15px 13px; */
+    background: rgb(0, 0, 0, 0.3);
     height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid hsl(0deg 0% 100% / 10%);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
+
+#discount #rewind div img {
+    max-width: 80%;
+    height: 50%;
+}
+
+#discount #rewind>div .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.8);
+    padding: 20px 10px;
+    box-shadow: var(--special-Box-Shadow);
+    width: 100%;
+    bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#discount #rewind>div .product-info .details .prix {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#discount #rewind>div .product-info .details .prix span {
+    text-align: center;
+    min-width: 70px;
+    padding: 5px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+#discount #rewind>div .product-info .details .prix span.old {
+    background-color: black;
+    position: relative;
+}
+
+#discount #rewind>div .product-info .details .prix span.old::before,
+#discount #rewind>div .product-info .details .prix span.old::after {
+    content: "";
+    background-color: rgba(220, 20, 60, 0.591);
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+#discount #rewind>div .product-info .details .prix span.old::before {
+    transform: translateX(-50%) rotate(20deg);
+    -webkit-transform: translateX(-50%) rotate(20deg);
+    -moz-transform: translateX(-50%) rotate(20deg);
+    -ms-transform: translateX(-50%) rotate(20deg);
+    -o-transform: translateX(-50%) rotate(20deg);
+}
+
+#discount #rewind>div .product-info .details .prix span.old::after {
+    transform: translateX(-50%) rotate(-20deg);
+    -webkit-transform: translateX(-50%) rotate(-20deg);
+    -moz-transform: translateX(-50%) rotate(-20deg);
+    -ms-transform: translateX(-50%) rotate(-20deg);
+    -o-transform: translateX(-50%) rotate(-20deg);
+}
+
+#discount #rewind>div .product-info .details .prix span.now {
+    background-color: var(--second-Color);
+}
+
+#discount #rewind>div .product-info .details .prix span i {
+    color: darkolivegreen;
+}
+
+#discount #rewind>div .product-info .details {
+    display: flex;
+    flex-direction: column;
+    color: var(--fourth-Color);
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+#discount #rewind>div .product-info .buy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#discount #rewind>div .product-info .buy button {
+    position: relative;
+    background-color: var(--second-Color);
+    border: none;
+    color: var(--fourth-Color);
+    padding: 5px 10px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+#discount #rewind>div .product-info .buy button::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0.2);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+#discount #rewind>div .product-info .buy button:hover::before {
+    animation: flash 0.3s ease-in-out 1 forwards;
+    -webkit-animation: flash 0.3s ease-in-out 1 forwards;
+}
+
+#discount #rewind>div .product-info .buy .quantity {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: var(--fourth-Color);
+}
+
+#discount #rewind>div .product-info .buy .quantity select {
+    width: 50%;
+    height: 100%;
+    height: 24px !important;
+    color: var(--fourth-Color);
+    background-color: black;
+    border: 1px solid rgba(250, 249, 249, 0.1);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+#discount #rewind>div .product-info .buy .quantity select option {
+    height: 100%;
+}
+
+#discount #rewind>div .product-info .buy .quantity select option {
+    background-color: black;
+    color: white;
+}
+
+#discount #rewind>div .product-info .stars {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#discount #rewind>div .product-info .stars i {
+    color: gold;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+    -moz-transition: transform 0.5s ease-out;
+    -ms-transition: transform 0.5s ease-out;
+    -o-transition: transform 0.5s ease-out;
+}
+
+#discount #rewind>div .product-info .stars i:hover {
+    transform: rotate(1turn);
+    -webkit-transform: rotate(1turn);
+    -moz-transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    -o-transform: rotate(1turn);
+}
+
+#discount #rewind>div .product-info .stars #done::before {
+    font-weight: 900 !important;
+}
+
+
+/* #discount #rewind>div .product-info .stars i:hover {
+    transform: rotate(1turn);
+    -webkit-transform: rotate(1turn);
+    -moz-transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    -o-transform: rotate(1turn);
+} */
+
+
+/* Start Animation  */
+
+@keyframes flash {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+/* End Animation  */
