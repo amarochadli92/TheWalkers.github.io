@@ -1,12 +1,21 @@
 /*********************** START GLOBAL RULES ***************************/
 
 :root {
-    --first-Color: #0e185f;
+    /* --first-Color: #0e185f;
     --second-Color: #2fa4ff;
     --third-Color: #00ffdd;
-    --fourth-Color: #e8ffc2;
+    --fourth-Color: #e8ffc2;  */
     --special-Box-Shadow: 0px 0px 51px 2px inset var(--first-Color);
     --transition-hover: 0.5s ease-in-out;
+    --first-Color: #000000;
+    --second-Color: #ce1616;
+    --third-Color: #4ed01a;
+    --fourth-Color: silver;
+}
+
+@font-face {
+    font-family: "rog";
+    src: url("/7032-fontps.ttf");
 }
 
 body {
@@ -61,8 +70,46 @@ body {
 
 /*********************** START HEADER ***************************/
 
+.rain {
+    display: flex;
+}
+
+.rain i {
+    font-size: 3rem;
+    position: absolute;
+    top: -20%;
+    width: 48px;
+    height: 48px;
+    z-index: 5;
+    margin: 20px;
+    filter: blur(5px);
+    -webkit-filter: blur(15px);
+    transition: filter 1s;
+    -webkit-transition: filter 1s;
+    -moz-transition: filter 1s;
+    -ms-transition: filter 1s;
+    -o-transition: filter 1s;
+}
+
+.rain i:hover {
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+
+.rain i.fa-playstation {
+    color: blue;
+}
+
+.rain i.fa-xbox {
+    color: green;
+}
+
+.rain i.fa-gamepad {
+    color: red;
+}
+
 header {
-    background-color: #0e185f;
+    background-color: var(--first-Color);
     position: relative;
     z-index: 3;
 }
@@ -81,6 +128,7 @@ header .logo {
     gap: 10px;
     color: var(--fourth-Color);
     overflow: hidden;
+    font-family: "rog";
 }
 
 header .logo .spider {
@@ -100,6 +148,19 @@ header .logo .spider {
 header .logo .spider i {
     font-size: 2rem;
     color: var(--first-Color);
+}
+
+header .logo img {
+    width: 50px;
+    background-color: rgb(0, 0, 0, 0.3);
+    border: 2px solid red;
+    padding: 5px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 header nav {
@@ -164,6 +225,37 @@ header .details button i {
     margin-right: 5px;
 }
 
+header .info {
+    display: flex;
+    gap: 10px;
+}
+
+header .info button {
+    color: var(--fourth-Color);
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 5px 8px !important;
+    margin-left: 1px;
+    transition: var(--transition-hover);
+    border-radius: 50%;
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 0px 0px 0px 7px var(--second-Color);
+}
+
+header .info button:hover {
+    background-color: transparent;
+}
+
 
 /*********************** End HEADER ***************************/
 
@@ -174,12 +266,9 @@ header .details button i {
     padding-top: 70px;
     padding-bottom: 70px;
     height: calc(100vh - 80px);
-    background-image: url("/img/about.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
     overflow-x: clip;
+    background-color: #000000;
 }
 
 .intro-company .container {
@@ -267,6 +356,7 @@ header .details button i {
     -moz-transition: var(--transition-hover);
     -ms-transition: var(--transition-hover);
     -o-transition: var(--transition-hover);
+    border-top-left-radius: 10%;
 }
 
 .intro-company .intro .shop i {
@@ -318,10 +408,11 @@ header .details button i {
 #discount {
     padding-top: 100px;
     height: 100vh;
-    background-image: linear-gradient(150deg, var(--second-Color), black 50%);
+    background-image: linear-gradient(150deg, black 50%, var(--second-Color) 50%);
 }
 
 #discount h2 {
+    font-family: "rog";
     text-transform: uppercase;
     width: fit-content;
     margin: 0 auto;

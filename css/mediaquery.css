@@ -102,13 +102,6 @@
     header nav a {
         font-size: 0.6rem;
     }
-    header .info {
-        flex-direction: column;
-    }
-    header .info button {
-        font-size: 0.7rem;
-        padding: 2px 5px;
-    }
 }
 
 
