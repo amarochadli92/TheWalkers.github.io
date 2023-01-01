@@ -1,14 +1,10 @@
 /*********************** START GLOBAL RULES ***************************/
 
 :root {
-    /* --first-Color: #0e185f;
-    --second-Color: #2fa4ff;
-    --third-Color: #00ffdd;
-    --fourth-Color: #e8ffc2;  */
     --special-Box-Shadow: 0px 0px 51px 2px inset var(--first-Color);
     --transition-hover: 0.5s ease-in-out;
-    --first-Color: #000000;
-    --second-Color: #ce1616;
+    --first-Color: rgb(18, 18, 18);
+    --second-Color: #0078f2;
     --third-Color: #4ed01a;
     --fourth-Color: silver;
 }
@@ -23,6 +19,14 @@ body {
     min-height: 100vh;
 }
 
+.glass-black {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(0, 0, 0, 0.88);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,6 +39,90 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.neon-button {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(0, 0, 0, 0.88);
+    color: var(--fourth-Color);
+    padding: 10px 15px;
+    transition: var(--transition-hover);
+    -webkit-transition: var(--transition-hover);
+    -moz-transition: var(--transition-hover);
+    -ms-transition: var(--transition-hover);
+    -o-transition: var(--transition-hover);
+}
+
+.neon-button:hover {
+    box-shadow: 0 0px 3px var(--second-Color);
+    border-color: var(--second-Color);
+    color: var(--second-Color);
+}
+
+.title-section {
+    font-family: "rog";
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    color: var(--fourth-Color);
+    position: relative;
+    padding: 10px 70px;
+    z-index: 5;
+    border-radius: 8px;
+    transition: 0.3s 0.3s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    -webkit-transition: 0.3s 0.3s;
+    -moz-transition: 0.3s 0.3s;
+    -ms-transition: 0.3s 0.3s;
+    -o-transition: 0.3s 0.3s;
+}
+
+@media (max-width: 767px) {
+    .title-section {
+        padding: 10px 40px;
+    }
+}
+
+.title-section:hover {
+    background-color: var(--second-Color);
+}
+
+.title-section::before,
+.title-section::after {
+    content: "\f091";
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    position: absolute;
+    transition: 0.3s !important;
+    -webkit-transition: 0.3s !important;
+    -moz-transition: 0.3s !important;
+    -ms-transition: 0.3s !important;
+    -o-transition: 0.3s !important;
+}
+
+.title-section::before {
+    left: -20%;
+}
+
+.title-section:hover::before {
+    left: 10px;
+}
+
+.title-section::after {
+    right: -20%;
+}
+
+.title-section:hover::after {
+    right: 10px;
 }
 
 
@@ -80,7 +168,7 @@ body {
     top: -20%;
     width: 48px;
     height: 48px;
-    z-index: 5;
+    z-index: 1;
     margin: 20px;
     filter: blur(5px);
     -webkit-filter: blur(15px);
@@ -109,17 +197,35 @@ body {
 }
 
 header {
-    background-color: var(--first-Color);
-    position: relative;
-    z-index: 3;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    height: 80px;
+}
+
+header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(0, 0, 0, 0.88);
 }
 
 header .container {
-    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    position: absolute;
 }
 
 header .logo {
@@ -129,31 +235,13 @@ header .logo {
     color: var(--fourth-Color);
     overflow: hidden;
     font-family: "rog";
-}
-
-header .logo .spider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    background-color: var(--second-Color);
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-
-header .logo .spider i {
-    font-size: 2rem;
-    color: var(--first-Color);
+    width: 25%;
 }
 
 header .logo img {
     width: 50px;
     background-color: rgb(0, 0, 0, 0.3);
-    border: 2px solid red;
+    border: 2px solid var();
     padding: 5px;
     height: 50px;
     border-radius: 50%;
@@ -189,71 +277,11 @@ header nav a {
     -o-transition: var(--transition-hover);
 }
 
-header .details {
-    display: flex;
-    gap: 10px;
-    position: relative;
-}
-
-header .details button {
-    background-color: rgb(0, 0, 0, 0.3);
-    border: none;
-    color: var(--fourth-Color);
-    padding: 10px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: var(--transition-hover);
-    border-radius: 5px;
-    box-shadow: 0px 0px 0px 3px rgb(0, 0, 0, 0.3);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    -webkit-transition: var(--transition-hover);
-    -moz-transition: var(--transition-hover);
-    -ms-transition: var(--transition-hover);
-    -o-transition: var(--transition-hover);
-}
-
-header .details button:hover {
-    background-color: var(--second-Color);
-    box-shadow: 0px 0px 0px 3px rgb(0, 0, 0, 0.3);
-    font-weight: bolder;
-}
-
-header .details button i {
-    margin-right: 5px;
-}
-
 header .info {
     display: flex;
+    justify-content: center;
     gap: 10px;
-}
-
-header .info button {
-    color: var(--fourth-Color);
-    font-size: 1rem;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
-    padding: 5px 8px !important;
-    margin-left: 1px;
-    transition: var(--transition-hover);
-    border-radius: 50%;
-    -webkit-transition: var(--transition-hover);
-    -moz-transition: var(--transition-hover);
-    -ms-transition: var(--transition-hover);
-    -o-transition: var(--transition-hover);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    box-shadow: 0px 0px 0px 7px var(--second-Color);
-}
-
-header .info button:hover {
-    background-color: transparent;
+    width: 25%;
 }
 
 
@@ -265,27 +293,29 @@ header .info button:hover {
 .intro-company {
     padding-top: 70px;
     padding-bottom: 70px;
-    height: calc(100vh - 80px);
+    height: 100vh;
     position: relative;
     overflow-x: clip;
-    background-color: #000000;
+    background-color: rgb(18, 18, 18);
+    background-image: linear-gradient(-284deg, var(--first-Color) 50%, black 50%);
 }
 
 .intro-company .container {
     height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .intro-company .intro {
     position: absolute;
     margin: 0 auto;
     width: 80%;
-    padding: 10px 25px;
     color: var(--fourth-Color);
-    background-color: rgb(255, 255, 255, 0.1);
+    background-color: black;
     filter: blur(0.2px);
     -webkit-filter: blur(0.2px);
-    position: relative;
-    z-index: 2;
+    z-index: 5;
     border: 2px solid rgba(255, 255, 255, 0.1);
     top: -100%;
     transform: translateY(-20%);
@@ -302,7 +332,29 @@ header .info button:hover {
 }
 
 .intro-company .intro#coming {
-    top: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.intro-company .intro {
+    display: flex;
+}
+
+.intro-company .intro .text,
+.intro-company .intro .brand,
+.intro-company .intro .brand img {
+    width: 50% !important;
+}
+
+.intro-company .intro .text {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-Color);
+    padding: 50px;
 }
 
 .intro-company .intro .text h2 {
@@ -335,48 +387,26 @@ header .info button:hover {
     color: magenta;
 }
 
-.intro-company .intro .shop {
-    background-color: var(--second-Color);
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: var(--fourth-Color);
-    padding: 5px 10px;
-    width: 50%;
-    display: block;
-    margin: 20px auto;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: var(--transition-hover);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    -webkit-transition: 0.3;
-    -moz-transition: var(--transition-hover);
-    -ms-transition: var(--transition-hover);
-    -o-transition: var(--transition-hover);
-    border-top-left-radius: 10%;
+.intro-company .intro #shop {
+    backdrop-filter: none;
 }
 
-.intro-company .intro .shop i {
-    font-size: 1.5rem;
-    margin-right: 10px;
-}
-
-.intro-company .intro .shop:hover {
-    background-color: transparent;
-    box-shadow: 0px 0px 0px 10px var(--second-Color);
+.intro-company .intro .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero {
     position: absolute;
     top: 15%;
+    z-index: 5;
     transition: 1s ease-out;
     -webkit-transition: 1s ease-out;
     -moz-transition: 1s ease-out;
     -ms-transition: 1s ease-out;
     -o-transition: 1s ease-out;
+    display: none;
 }
 
 .hero-one {
@@ -408,63 +438,7 @@ header .info button:hover {
 #discount {
     padding-top: 100px;
     height: 100vh;
-    background-image: linear-gradient(150deg, black 50%, var(--second-Color) 50%);
-}
-
-#discount h2 {
-    font-family: "rog";
-    text-transform: uppercase;
-    width: fit-content;
-    margin: 0 auto;
-    background-color: rgb(255, 255, 255, 0.1);
-    border: 1px solid rgb(255, 255, 255, 0.1);
-    color: var(--fourth-Color);
-    position: relative;
-    padding: 10px 70px;
-    z-index: 5;
-    border-radius: 8px;
-    transition: 0.3s 0.3s;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    -webkit-transition: 0.3s 0.3s;
-    -moz-transition: 0.3s 0.3s;
-    -ms-transition: 0.3s 0.3s;
-    -o-transition: 0.3s 0.3s;
-}
-
-#discount h2::before {
-    left: -30%;
-}
-
-#discount h2::after {
-    right: -30%;
-}
-
-#discount h2::after,
-#discount h2::before {
-    content: "\f091";
-    font-weight: 900;
-    font-family: "Font Awesome 6 Free";
-    position: absolute;
-    transition: 0.3s !important;
-    -webkit-transition: 0.3s !important;
-    -moz-transition: 0.3s !important;
-    -ms-transition: 0.3s !important;
-    -o-transition: 0.3s !important;
-}
-
-#discount h2:hover::before {
-    left: 10px;
-}
-
-#discount h2:hover::after {
-    right: 10px;
-}
-
-#discount h2:hover {
-    background-color: var(--second-Color);
+    background-image: linear-gradient(284deg, var(--first-Color) 50%, black 50%);
 }
 
 #discount .tns-outer {

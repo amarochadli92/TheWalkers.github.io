@@ -1,6 +1,24 @@
-/* Start Header */
+/* START HEADER */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    header .container {
+        width: inherit;
+    }
+    header .info button>span {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    header .container {
+        gap: 10px;
+    }
+    header .logo {
+        width: fit-content;
+    }
+    header .logo h1 {
+        font-size: 1.2rem;
+    }
     header nav {
         position: fixed;
         bottom: 0;
@@ -39,9 +57,12 @@
     header nav a.active i {
         font-size: 1.5rem;
     }
+    header .info {
+        width: fit-content;
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     header nav a::after {
         content: "";
         width: 100%;
@@ -88,31 +109,43 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
-    header .logo .spider {
-        width: 40px;
-        height: 40px;
-    }
-    header .logo .spider i {
+@media (min-width: 768px) {
+    header .logo h1 {
         font-size: 1.5rem;
     }
-    header .logo h1 {
-        font-size: 1rem;
-    }
     header nav a {
-        font-size: 0.6rem;
+        font-size: 1rem;
     }
 }
 
 
-/* End Header */
+/* END HEADER */
 
-@media (max-width: 768px) {
-    .hero {
-        display: none;
-    }
+
+/* START INTRO COMPANY */
+
+@media (max-width: 991px) {
     .intro-company .intro {
-        width: 100%;
+        height: 40%;
+        justify-content: center;
+        gap: 5px;
+    }
+    .intro-company .intro .text {
+        padding: 20px 10px;
+        justify-content: center;
+    }
+    .intro-company .intro .text h1 {
+        font-size: 15px;
+    }
+    .intro-company .intro .text h2 {
+        font-size: 12px;
+    }
+    .intro-company .intro .text h2 i {
+        font-size: 1rem;
+    }
+    .intro-company .intro .text #shop {
+        padding: 5px;
+        font-size: 14px;
     }
 }
 
@@ -137,3 +170,12 @@
         bottom: 0%;
     }
 }
+
+@media (max-width: 768px) {
+    .hero {
+        display: none;
+    }
+}
+
+
+/* END INTRO COMPANY */

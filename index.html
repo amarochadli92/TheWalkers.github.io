@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Venom Game</title>
     <!-- Css Main StyleSheet File -->
+
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/mediaquery.css" />
     <!-- For Render All Elements Normalize Style -->
@@ -14,50 +15,43 @@
     <!-- For Font Awesome 6 Free Library  -->
     <link rel="stylesheet" href="css/all.css" />
     <!-- For Google Fonts  -->
-    <link class="t" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" class="tiny-slider">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" />
 
 </head>
 
 <body>
     <main>
         <div class="rain">
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
-            <i class="fa-brands fa-playstation"></i>
-            <i class="fa-brands fa-xbox"></i>
-            <i class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
+            <i id="rain" class="fa-brands fa-playstation"></i>
+            <i id="rain" class="fa-brands fa-xbox"></i>
+            <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
         </div>
         <!--_____________________START HEADER_____________________-->
         <header>
             <div class="container">
-
-                <!-- START LOGO -->
                 <div class="logo">
-                    <!-- <div class="spider">
-                        <i class="fa-solid fa-spider"></i>
-                    </div> -->
                     <img src="/img/rain/alan_walker2.png" alt="" srcset="">
                     <h1>The Walkers</h1>
                 </div>
-                <!-- START LOGO -->
-                <!-- START NAV BAR -->
                 <nav>
                     <a class="link active" href="#intro-company"><i class="fa-solid fa-house"></i>Home</a>
                     <a class="link" href="#discount"><i class="fa-solid fa-tags"></i>Discount</a>
@@ -65,20 +59,11 @@
                     <a class="link " href="#"><i class="fa-solid fa-address-card"></i>About</a>
                     <a class="link" href="#"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
                 </nav>
-                <!-- END NAV BAR -->
-
-                <!-- START BASKET SHOPPING + LOGIN BUTTON  -->
                 <div class="info">
-                    <button class="basket-shopping"><i class="fa-solid fa-basket-shopping"></i></button>
-                    <button class="login"><i class="fa-solid fa-right-to-bracket"></i></button>
-                    <button class="switch-mode">
-                        <input type="checkbox" class="switch-mode-input" name="mode">
-                        <div class="switch">
-                            
-                        </div>
-                    </button>
+                    <button class="neon-button"><i class="fa-solid fa-bag-shopping"></i><span>Your Cart</span></button>
+                    <button class="neon-button"><i class="fa-solid fa-right-to-bracket"></i><span>Login</span></button>
                 </div>
-                <!-- END BASKET SHOPPING + LOGIN BUTTON  -->
+
             </div>
         </header>
         <!--_____________________ END HEADER _____________________-->
@@ -88,6 +73,7 @@
             <img class="hero hero-one" src="/img/intro.png">
             <img class="hero hero-two" src="/img/intro2.png">
             <div class="container">
+
                 <div class="intro">
                     <div class="text">
                         <h1>Welcome Gamers To Spider Games</h1>
@@ -97,8 +83,12 @@
                             <i class="fa-brands fa-xbox"></i> & Nitando
                             <i class="fa-sharp fa-solid fa-gamepad"></i>
                         </h2>
+                        <button class="neon-button" id="shop"> <i class="fa-brands fa-shopify"></i>Shop Now</button>
                     </div>
-                    <button class="shop"> <i class="fa-brands fa-shopify"></i>Shop Now</button>
+                    <div class="brand">
+
+                        <img src="/img/rain/alan_walker2.png" alt="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -106,102 +96,10 @@
         <!--____________________ START DISCOUNT SECTION _____________________-->
         <section id="discount">
             <div class="container">
-                <h2>Discount</h2>
+                <h2 class="title-section">Discount</h2>
                 <!--START SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
                 <div id="rewind">
-                    <!-- <div>
-                        <img src="/img/pub-intro/halo-5.jpeg" alt="">
-                        <div class="product-info">
-                            <div class="details">
-                                <span class="name">Resident Evil 2</span>
-                                <span class="Platfrom">Playstation 4</span>
-                                <span class="prix">
-                                    <span class="old">40£<i class="fa-solid fa-money-bill-wave"></i></span>
-                                <span class="now">15.99$ <i class="fa-solid fa-money-bill-wave"></i></span>
-                                </span>
-                            </div>
-                            <div class="buy">
-                                <button><i class="fa-brands fa-shopify"></i> Add To Panier</button>
-                                <div class="quantity">
-                                    <span>Choose Quantity</span>
-                                    <select name="quantity" id="">
-                                        <option value="1">1</option>
-                                        <option value="3">3</option>
-                                        <option value="2">2</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="stars">
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="/img/pub-intro/mario.png" alt="">
-                        <div class="product-info">
-                            <div class="details">
-                                <span class="product">Resident Evil 2</span>
-                                <span class="Platfrom">Playstation 4</span>
-                                <div class="prix">
-                                    <span class="old">40$ <i class="fa-solid fa-money-bill-wave"></i></span>
-                                    <span class="now">15.99$ <i class="fa-solid fa-money-bill-wave"></i></span>
-                                </div>
-                            </div>
-                            <div class="buy">
-                                <button><i class="fa-brands fa-shopify"></i> Add To Panier</button>
-                                <div class="quantity">
-                                    <span>Choose Quantity</span>
-                                    <select name="quantity" id="">
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="1">1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="stars">
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./img/pub-intro/playstation5-ps5-black-controller-11642917601fxwaemltka.png" alt="">
-                        <div class="product-info">
-                            <div class="details">
-                                <span class="product">Resident Evil 2</span>
-                                <span class="Platfrom">Playstation 4</span>
-                                <div class="prix">
-                                    <span class="old">40$ <i class="fa-solid fa-money-bill-wave"></i></span>
-                                </div>
-                                <span class="now">15.99$ <i class="fa-solid fa-money-bill-wave"></i></span>
-                            </div>
-                            <div class="buy">
-                                <button><i class="fa-brands fa-shopify"></i> Add To Panier</button>
-                                <div class="quantity">
-                                    <span>Choose Quantity</span>
-                                    <select name="quantity" id="">
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="1">1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="stars">
-                                <i id="done" class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
-                    </div> -->
+
                 </div>
                 <!-- END SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
         </section>
