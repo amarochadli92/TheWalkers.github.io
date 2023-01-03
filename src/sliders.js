@@ -1,32 +1,35 @@
-import { tns } from "../node_modules/tiny-slider/src/tiny-slider.js";
+import { Swiper } from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
+import { created_element as check } from "./index.js";
 
-var slider = tns({
-    container: "#rewind",
-    items: 3,
-    rewind: true,
-    swipeAngle: false,
-    speed: 400,
-    autoplay: true,
-    responsive: {
-        0: {
-            items: 1,
+newSwiper();
+check && newSwiper();
+
+function newSwiper() {
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        slidesPerView: 3,
+        loopFillGroupWithBlank: false,
+        loop: true,
+        autoplay: true,
+        pagination: { el: ".swiper-pagination" },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
-        768: {
-            items: 1,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            650: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1300: {
+                slidesPerView: 4,
+            },
         },
-        768: {
-            items: 2,
-        },
-        992: {
-            items: 2,
-        },
-        992: {
-            items: 3,
-        },
-    },
-});
-let btn = document.querySelectorAll(
-    "#discount .tns-outer .tns-controls button"
-);
-btn[0].innerHTML = '<i class="fa-solid fa-circle-left"></i>';
-btn[1].innerHTML = '<i class="fa-solid fa-circle-right"></i>';
+    });
+}

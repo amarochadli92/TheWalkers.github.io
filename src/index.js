@@ -15,10 +15,11 @@ slidClasses(nav_bar, "active");
 let data = getData("../src/data.json");
 
 /* FUNCTION CREATE ELEMENT FOR PRODUCT HAVE */
-createElement(data);
+
+export let created_element = await createElement(getDiscount(await data));
 
 /* FOR STARS RATE */
-stars();
+// stars();
 
 /* START FUNCTION GET DATA FROM {.JSON} FILE
  * @param {string} file_dir The directory
@@ -32,17 +33,16 @@ async function getData(dir) {
 /* END FUNCTION GET DATA FROM {.JSON} FILE */
 
 async function createElement(data) {
-    // GET JUST PRODUCTS HAVE DISCOUNT
-    const products_discount = getDiscount(await data);
+    let check = false;
+    const parent_discount = document.querySelector("#discount .swiper-wrapper");
+    let create = data.forEach((product, index) => {
+        let new_product = new Product(product, index, parent_discount);
+        new_product.create();
+        index == data.length - 1 && (check = true);
+    });
 
-    createDiscountProducts(products_discount);
-
-    function createDiscountProducts(products) {
-        products.forEach((prod, index) => {
-            const product = new Product(prod, index);
-            product.create();
-        });
-    }
+    stars();
+    return check;
 }
 /* START FUNCTIONS GET DISCOUNT PRODUCTS FROM ALL DATA PRODUCTS
  * @param {array} all products data

@@ -1,6 +1,8 @@
 /** CLASS PRODUCT FOR BUILD DIV PRODUCT + APPEND IN PLACE WE SHOULD SHOW IN PAGE*/
+const cart = document.querySelector(".cart");
+
 export class Product {
-    constructor(prod, index) {
+    constructor(prod, index, target, length) {
         this.name = prod.name;
         this.priceOld = prod.price;
         this.price =
@@ -11,6 +13,8 @@ export class Product {
         this.quantity = prod.quantity;
         this.dirImg = prod.img;
         this.index = index;
+        this.target = target;
+        this.length = length;
     }
     create() {
         const product = createProduct(this.index);
@@ -20,15 +24,22 @@ export class Product {
         const product_name = createProductName(this.name);
         const product_platform = createProductPlatform(this.platform);
         const product_price = createProductPrice(this);
-        const product_buy = createProductBuy();
+        const product_buy = createProductBuy(
+            this.name,
+            this.platform,
+            this.priceOld,
+            this.discount,
+            this.price
+        );
         const div_quantity = createProductQuantity(this.quantity);
         const stars = createStarsRated(6);
-        showProduct();
+
+        showProduct(this.target);
 
         function createProduct(index) {
             const div = document.createElement("div");
+            div.classList.add("swiper-slide");
             div.classList.add("product");
-            div.id = `rewind-item${index}`;
             return div;
         }
 
@@ -37,6 +48,7 @@ export class Product {
             img.classList.add("product-img");
             img.src = dir;
             product.appendChild(img);
+
             return img;
         }
 
@@ -101,10 +113,18 @@ export class Product {
             return product_price;
         }
 
-        function createProductBuy() {
+        function createProductBuy(name, platform, old_price, discount, price) {
             const div = document.createElement("div");
             div.classList.add("buy");
             const button = document.createElement("button");
+            button.classList.add("neon-button");
+            /*ADD DATA FOR PRODUCT IN DATASET BUTTON */
+            button.dataset.productName = name;
+            button.dataset.productPlatform = platform;
+            button.dataset.oldPrice = old_price;
+            button.dataset.discount = discount;
+            button.dataset.price = price;
+            /******************************* */
             button.innerHTML = '<i class="fa-brands fa-shopify"></i> Add To Panier';
             div.appendChild(button);
             return div;
@@ -160,9 +180,16 @@ export class Product {
             return stars;
         }
 
-        function showProduct() {
+        function showProduct(target) {
             product.appendChild(product_info);
-            document.getElementById("rewind").appendChild(product);
+            if (target.children[0].classList[2] == "is-loading") {
+                target.innerHTML = "";
+            }
+            target.appendChild(product);
         }
     }
 }
+
+cart.onclick = function(e) {
+    alert("k");
+};

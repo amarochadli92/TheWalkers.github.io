@@ -8,14 +8,17 @@
     <title>Venom Game</title>
     <!-- Css Main StyleSheet File -->
 
-    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" class="tiny-slider"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiperLib.css">
     <link rel="stylesheet" href="css/mediaquery.css" />
     <!-- For Render All Elements Normalize Style -->
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- For Font Awesome 6 Free Library  -->
     <link rel="stylesheet" href="css/all.css" />
     <!-- For Google Fonts  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" class="tiny-slider">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" />
 
 </head>
@@ -45,6 +48,48 @@
             <i id="rain" class="fa-brands fa-xbox"></i>
             <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
         </div>
+        <div class="container cart-buy">
+
+            <div class="info">
+                <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
+                <span>Remove All</span>
+            </div>
+            <div class="product">
+                <img src="./img/pub-intro/halo-5.jpeg">
+                <div class="info-product">
+                    <h2>Halo 5</h2>
+                    <span>Xbox One</span>
+                    <div class="control-quantity">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="quantity"></span>
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="mony">
+                        <span>$20</span>
+                        <span>Remove</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/pub-intro/resident-evil-2.png">
+                <div class="info-product">
+                    <h2>Resident Evil 2</h2>
+                    <span>Playstation 5</span>
+                    <div class="control-quantity">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="quantity"></span>
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
+                    <div class="mony">
+                        <span>$20</span>
+                        <span>Remove</span>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
         <!--_____________________START HEADER_____________________-->
         <header>
             <div class="container">
@@ -60,7 +105,7 @@
                     <a class="link" href="#"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
                 </nav>
                 <div class="info">
-                    <button class="neon-button"><i class="fa-solid fa-bag-shopping"></i><span>Your Cart</span></button>
+                    <button class="neon-button cart"><i class="fa-solid fa-bag-shopping"></i><span>Your Cart</span></button>
                     <button class="neon-button"><i class="fa-solid fa-right-to-bracket"></i><span>Login</span></button>
                 </div>
 
@@ -69,11 +114,9 @@
         <!--_____________________ END HEADER _____________________-->
         <!--_____________________ START INTRO COMPANY _____________________-->
         <section id="intro-company" class="intro-company">
-
             <img class="hero hero-one" src="/img/intro.png">
             <img class="hero hero-two" src="/img/intro2.png">
             <div class="container">
-
                 <div class="intro">
                     <div class="text">
                         <h1>Welcome Gamers To Spider Games</h1>
@@ -95,11 +138,104 @@
         <!--_____________________ END INTRO COMPANY _____________________-->
         <!--____________________ START DISCOUNT SECTION _____________________-->
         <section id="discount">
+            <div class="text-intro">
+                For The Republic
+            </div>
             <div class="container">
-                <h2 class="title-section">Discount</h2>
+                <h2 class="title-section"><span>DISCOUNT</span></h2>
                 <!--START SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
-                <div id="rewind">
-
+                <!-- Slider main container -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide product is-loading ">
+                            <div class="img"></div>
+                            <div class="product-info">
+                                <div class="details ">
+                                    <span class="product-name"></span>
+                                    <span class="product-platform"></span>
+                                    <span class="prix"><span class="old"></span>
+                                    <span class="now"></span></span>
+                                </div>
+                                <div class="buy"><button></button>
+                                    <div class="quantity"><span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="stars"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide product is-loading">
+                            <div class="img"></div>
+                            <div class="product-info">
+                                <div class="details ">
+                                    <span class="product-name"></span>
+                                    <span class="product-platform"></span>
+                                    <span class="prix"><span class="old"></span>
+                                    <span class="now"></span></span>
+                                </div>
+                                <div class="buy"><button></button>
+                                    <div class="quantity"><span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="stars"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide product is-loading ">
+                            <div class="img"></div>
+                            <div class="product-info">
+                                <div class="details ">
+                                    <span class="product-name"></span>
+                                    <span class="product-platform"></span>
+                                    <span class="prix"><span class="old"></span>
+                                    <span class="now"></span></span>
+                                </div>
+                                <div class="buy"><button></button>
+                                    <div class="quantity"><span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="stars"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide product is-loading">
+                            <div class="img"></div>
+                            <div class="product-info">
+                                <div class="details ">
+                                    <span class="product-name"></span>
+                                    <span class="product-platform"></span>
+                                    <span class="prix"><span class="old"></span>
+                                    <span class="now"></span></span>
+                                </div>
+                                <div class="buy"><button></button>
+                                    <div class="quantity"><span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="stars"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" swiper-slideproduct is-loading">
+                            <div class="img"></div>
+                            <div class="product-info">
+                                <div class="details ">
+                                    <span class="product-name"></span>
+                                    <span class="product-platform"></span>
+                                    <span class="prix"><span class="old"></span>
+                                    <span class="now"></span></span>
+                                </div>
+                                <div class="buy"><button></button>
+                                    <div class="quantity"><span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="stars"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
                 <!-- END SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
         </section>
@@ -107,7 +243,10 @@
     </main>
     <script type="module" src="src/index.js"></script>
     <script type="module" src="src/sliders.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="src/rainy.js"></script>
     <script src="src/switchColorMode.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+
 
 </html>
