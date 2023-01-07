@@ -49,45 +49,48 @@
             <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
         </div>
         <div class="container cart-buy">
-
-            <div class="info">
+            <div class="info-shopping-cart">
                 <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
-                <span>Remove All</span>
+                <span class="remove-all">Remove All</span>
             </div>
-            <div class="product">
+            <!-- <div class="product">
                 <img src="./img/pub-intro/halo-5.jpeg">
                 <div class="info-product">
-                    <h2>Halo 5</h2>
-                    <span>Xbox One</span>
+                    <div class="info">
+                        <h2>Halo 5</h2>
+                        <span>Xbox One</span>
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
                     <div class="control-quantity">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="quantity"></span>
-                        <i class="fa-solid fa-minus"></i>
+                        <i class="fa-solid fa-circle-plus fa-fw quantity-decrement"></i>
+                        <span class="quantity">5</span>
+                        <i class="fa-solid fa-circle-minus fa-fw quantity-increment"></i>
                     </div>
                     <div class="mony">
-                        <span>$20</span>
-                        <span>Remove</span>
+                        <span class="price">$20</span>
+                        <span class="remove-product">Remove</span>
                     </div>
                 </div>
-            </div>
-            <div class="product">
+            </div> -->
+            <!-- <div class="product">
                 <img src="./img/pub-intro/resident-evil-2.png">
                 <div class="info-product">
-                    <h2>Resident Evil 2</h2>
-                    <span>Playstation 5</span>
+                    <div class="info">
+                        <h2>Resident Evil 2</h2>
+                        <span>Playstation 5</span><i class="fa-solid fa-circle-check"></i></div>
                     <div class="control-quantity">
-                        <i class="fa-solid fa-plus"></i>
-                        <span class="quantity"></span>
-                        <i class="fa-solid fa-minus"></i>
+                        <i class="fa-solid fa-circle-plus fa-fw"></i>
+                        <span class="quantity">1</span>
+                        <i class="fa-solid fa-circle-minus"></i>
                     </div>
                     <div class="mony">
-                        <span>$20</span>
-                        <span>Remove</span>
+                        <span class="price">$20</span>
+                        <span class="remove-product">Remove</span>
                     </div>
                 </div>
 
 
-            </div>
+            </div> -->
 
         </div>
         <!--_____________________START HEADER_____________________-->
@@ -146,7 +149,7 @@
                 <!--START SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
                 <!-- Slider main container -->
                 <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper discount-products">
                         <div class="swiper-slide product is-loading ">
                             <div class="img"></div>
                             <div class="product-info">
@@ -247,6 +250,7 @@
     <script src="src/rainy.js"></script>
     <script src="src/switchColorMode.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+
 
 
 </html>

@@ -4,7 +4,7 @@
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/pngegg (1).png",
+        "img": "../img/pub-intro/watch dogs_.jpg",
         "quantity": 3
     },
     {
@@ -50,6 +50,33 @@
         "price": 50,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (9).png",
+        "quantity": 10
+    },
+    {
+        "name": "Halo 5",
+        "discount": 10,
+        "currency": "$",
+        "price": 50,
+        "platform": "Xbox One",
+        "img": "../img/pub-intro/halo-5.jpeg",
+        "quantity": 10
+    },
+    {
+        "name": "Mario",
+        "discount": 10,
+        "currency": "$",
+        "price": 50,
+        "platform": "Nitando Switch",
+        "img": "../img/pub-intro/mario.png",
+        "quantity": 10
+    },
+    {
+        "name": "Resident Evil 2",
+        "discount": 10,
+        "currency": "$",
+        "price": 50,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/resident-evil-2.png",
         "quantity": 10
     }
 ]

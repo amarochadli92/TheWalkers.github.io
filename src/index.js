@@ -4,6 +4,7 @@ const intro = document.querySelector(".intro-company .intro");
 const nav_bar = document.querySelectorAll(".link");
 const kartos = document.querySelector(".hero-two");
 const wernech = document.querySelector(".hero-one");
+const cart = document.querySelector(".cart");
 
 /* ADD EVENT DOM_CONTENT_LOADED FOR START ANIMATION */
 document.addEventListener("DOMContentLoaded", () => animationIntro());
@@ -15,8 +16,10 @@ slidClasses(nav_bar, "active");
 let data = getData("../src/data.json");
 
 /* FUNCTION CREATE ELEMENT FOR PRODUCT HAVE */
-
 export let created_element = await createElement(getDiscount(await data));
+
+createElement && addToCart();
+cart.onclick = () => showCart();
 
 /* FOR STARS RATE */
 // stars();
@@ -36,12 +39,13 @@ async function createElement(data) {
     let check = false;
     const parent_discount = document.querySelector("#discount .swiper-wrapper");
     let create = data.forEach((product, index) => {
-        let new_product = new Product(product, index, parent_discount);
+        let new_product = new Product(product, parent_discount);
         new_product.create();
         index == data.length - 1 && (check = true);
     });
 
     stars();
+
     return check;
 }
 /* START FUNCTIONS GET DISCOUNT PRODUCTS FROM ALL DATA PRODUCTS
@@ -124,3 +128,99 @@ function stars() {
     }
 }
 /* END FUNCTION STARTS RATE */
+
+function showCart() {
+    cart.toggleAttribute("selected");
+    document.querySelector(".container.cart-buy").toggleAttribute("selected");
+    controlQuantity();
+    controlRemoveProduct();
+}
+
+function addToCart() {
+    const btn_add = document.querySelectorAll(".add-to-cart");
+    btn_add.forEach((btn) => (btn.onclick = () => add(btn.dataset)));
+
+    function add(data) {
+        let product = `
+        <div class="product">
+        <img src="${data.dirImg}">
+        <div class="info-product">
+            <div class="info">
+                <h2>${data.productName}</h2>
+                <span>${data.productPlatform}</span>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="control-quantity">
+                <i class="fa-solid fa-circle-plus fa-fw"  id="quantity-increment"></i>
+                <span id="quantity" data-max-quantity = ${data.quantity}>1</span>
+                <i class=" fa-solid fa-circle-minus fa-fw" id="quantity-decrement"></i>
+            </div>
+            <div class="mony">
+                <span class="price">${data.price}</span>
+                <span class="remove-product" >Remove</span>
+            </div>
+        </div>
+    </div>
+        `;
+        document.querySelector(".cart-buy").innerHTML += product;
+
+        getTotalPrice();
+
+        function getTotalPrice() {
+            console.log(document.querySelector(".cart-buy").children.length);
+            let x = document.querySelectorAll(".cart-buy .product");
+        }
+    }
+}
+
+function controlQuantity() {
+    document.querySelectorAll(".control-quantity").forEach((element) => {
+        element.querySelector("#quantity-increment").onclick = () =>
+            increment(element);
+        element.querySelector("#quantity-decrement").onclick = () =>
+            decrement(element);
+    });
+
+    function increment(element) {
+        const quantity = element.querySelector("#quantity");
+        const max = +quantity.dataset.maxQuantity;
+        parseInt(quantity.innerHTML) < max && quantity.innerHTML++;
+    }
+
+    function decrement(element) {
+        const quantity = element.querySelector("#quantity");
+        parseInt(quantity.innerHTML) != 1 && quantity.innerHTML--;
+    }
+}
+
+function controlRemoveProduct() {
+    document.querySelector(".remove-all").onclick = () => removeAllProduct();
+
+    document.querySelectorAll(".remove-product").forEach((element) => {
+        element.onclick = () => removeItem(getParentElement(element, 3));
+    });
+
+    function removeAllProduct() {
+        document.querySelectorAll(".cart-buy .product").forEach((product) => {
+            document.querySelector(".cart-buy").removeChild(product);
+        });
+    }
+
+    function removeItem(index) {
+        document.querySelector(".cart-buy").removeChild(index);
+    }
+}
+
+/**
+ *
+ * @param {*} ele
+ * @param {*} steps for get a Parent Element
+ * @returns
+ */
+function getParentElement(ele, steps) {
+    let curr = ele;
+    for (let index = 0; index < steps; index++) {
+        curr = curr.parentNode;
+    }
+    return curr;
+}

@@ -1,39 +1,21 @@
 /** CLASS PRODUCT FOR BUILD DIV PRODUCT + APPEND IN PLACE WE SHOULD SHOW IN PAGE*/
-const cart = document.querySelector(".cart");
-
 export class Product {
-    constructor(prod, index, target, length) {
+    constructor(prod, target) {
         this.name = prod.name;
-        this.priceOld = prod.price;
-        this.price =
-            prod.discount != false ? prod.price - prod.discount : prod.price;
-        this.discount = prod.discount;
-        this.platform = prod.platform;
-        this.currency = prod.currency;
-        this.quantity = prod.quantity;
-        this.dirImg = prod.img;
-        this.index = index;
+        this.product = prod;
+        this.price = checkIfDiscounted(this.product);
         this.target = target;
-        this.length = length;
     }
     create() {
-        const product = createProduct(this.index);
-        const product_img = createProductImg(this.dirImg);
+        const product = createProduct();
+        const product_img = createProductImg(this.product.img);
         const product_info = createProductInfo();
         const product_details = createProductDetails();
-        const product_name = createProductName(this.name);
-        const product_platform = createProductPlatform(this.platform);
-        const product_price = createProductPrice(this);
-        const product_buy = createProductBuy(
-            this.name,
-            this.platform,
-            this.priceOld,
-            this.discount,
-            this.price
-        );
-        const div_quantity = createProductQuantity(this.quantity);
+        const product_name = createProductName(this.product.name);
+        const product_platform = createProductPlatform(this.product.platform);
+        const product_price = createProductPrice(this.product, this.price);
+        const product_buy = createProductBuy(this.product);
         const stars = createStarsRated(6);
-
         showProduct(this.target);
 
         function createProduct(index) {
@@ -48,7 +30,6 @@ export class Product {
             img.classList.add("product-img");
             img.src = dir;
             product.appendChild(img);
-
             return img;
         }
 
@@ -80,9 +61,9 @@ export class Product {
             return span;
         }
 
-        function createProductPrice(product) {
+        function createProductPrice(product, price) {
             const product_price = productPrice();
-            const product_price_old = productPriceOld();
+            const product_price_old = product.discount && productPriceOld();
             const product_price_now = productPriceNow();
 
             function productPrice() {
@@ -92,80 +73,48 @@ export class Product {
             }
 
             function productPriceOld() {
-                if (product.discount != false) {
-                    const product_price_old = document.createElement("span");
-                    product_price_old.classList.add("old");
-                    product_price_old.innerHTML = product.priceOld + product.currency;
-                    product_price.appendChild(product_price_old);
-                    return product_price_old;
-                }
+                const product_price_old = document.createElement("span");
+                product_price_old.classList.add("old");
+                product_price_old.innerHTML = product.price + product.currency;
+                product_price.appendChild(product_price_old);
+                return product_price_old;
             }
 
             function productPriceNow() {
                 const span = document.createElement("span");
                 span.classList.add("now");
-                span.innerHTML = product.price + product.currency;
+                span.innerHTML = price + product.currency;
                 product_price.appendChild(span);
                 return span;
             }
             product_details.appendChild(product_price);
-            product_info.appendChild(product_details);
             return product_price;
         }
 
-        function createProductBuy(name, platform, old_price, discount, price) {
+        function createProductBuy(product) {
             const div = document.createElement("div");
             div.classList.add("buy");
             const button = document.createElement("button");
-            button.classList.add("neon-button");
-            /*ADD DATA FOR PRODUCT IN DATASET BUTTON */
-            button.dataset.productName = name;
-            button.dataset.productPlatform = platform;
-            button.dataset.oldPrice = old_price;
-            button.dataset.discount = discount;
-            button.dataset.price = price;
-            /******************************* */
+            button.className = "add-to-cart neon-button";
             button.innerHTML = '<i class="fa-brands fa-shopify"></i> Add To Panier';
+            /*ADD DATA FOR PRODUCT IN DATASET BUTTON*/
+            addDataSet();
+            /********************************/
             div.appendChild(button);
+            product_info.appendChild(product_details);
+            product_info.appendChild(div);
             return div;
-        }
 
-        function createProductQuantity(quantity) {
-            const div = createDivQuantity();
-            const title = createTitleQuantity();
-            const select = createSelectQuantity();
-            product_buy.appendChild(div);
-            product_info.appendChild(product_buy);
-
-            function createDivQuantity() {
-                const div = document.createElement("div");
-                div.classList.add("quantity");
-                return div;
+            function addDataSet() {
+                button.dataset.productName = product.name;
+                button.dataset.productPlatform = product.platform;
+                button.dataset.oldPrice = product.price;
+                button.dataset.discount = product.discount;
+                button.dataset.price = product.price;
+                button.dataset.quantity = product.quantity;
+                button.dataset.quantity = product.quantity;
+                button.dataset.dirImg = product.img;
             }
-
-            function createTitleQuantity() {
-                const title = document.createElement("span");
-                title.innerHTML = "Choose Quantity";
-                div.appendChild(title);
-            }
-
-            function createSelectQuantity() {
-                const select = document.createElement("select");
-                createOptionQuantity(quantity);
-                select.name = "quantity";
-                div.appendChild(select);
-
-                function createOptionQuantity(quantity) {
-                    for (let i = 1; i <= quantity; i++) {
-                        const option = document.createElement("option");
-                        option.value = i;
-                        option.innerHTML = i;
-                        select.appendChild(option);
-                    }
-                }
-                return select;
-            }
-            return div;
         }
 
         function createStarsRated(quantity) {
@@ -189,7 +138,13 @@ export class Product {
         }
     }
 }
+/** END CLASS PRODUCT */
 
-cart.onclick = function(e) {
-    alert("k");
-};
+/**
+ *
+ * @param {*} product
+ * @returns price
+ */
+function checkIfDiscounted(product) {
+    return !product.discount ? product.price : product.price - product.discount;
+}
