@@ -14,7 +14,7 @@ export class Product {
         const product_name = createProductName(this.product.name);
         const product_platform = createProductPlatform(this.product.platform);
         const product_price = createProductPrice(this.product, this.price);
-        const product_buy = createProductBuy(this.product);
+        const product_buy = createProductBuy(this.product, this.price);
         const stars = createStarsRated(6);
         showProduct(this.target);
 
@@ -91,7 +91,7 @@ export class Product {
             return product_price;
         }
 
-        function createProductBuy(product) {
+        function createProductBuy(product, price) {
             const div = document.createElement("div");
             div.classList.add("buy");
             const button = document.createElement("button");
@@ -110,7 +110,7 @@ export class Product {
                 button.dataset.productPlatform = product.platform;
                 button.dataset.oldPrice = product.price;
                 button.dataset.discount = product.discount;
-                button.dataset.price = product.price;
+                button.dataset.price = price;
                 button.dataset.quantity = product.quantity;
                 button.dataset.quantity = product.quantity;
                 button.dataset.dirImg = product.img;

@@ -53,45 +53,50 @@
                 <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
                 <span class="remove-all">Remove All</span>
             </div>
-            <!-- <div class="product">
-                <img src="./img/pub-intro/halo-5.jpeg">
-                <div class="info-product">
-                    <div class="info">
-                        <h2>Halo 5</h2>
-                        <span>Xbox One</span>
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <div class="control-quantity">
-                        <i class="fa-solid fa-circle-plus fa-fw quantity-decrement"></i>
-                        <span class="quantity">5</span>
-                        <i class="fa-solid fa-circle-minus fa-fw quantity-increment"></i>
-                    </div>
-                    <div class="mony">
-                        <span class="price">$20</span>
-                        <span class="remove-product">Remove</span>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="product">
-                <img src="./img/pub-intro/resident-evil-2.png">
-                <div class="info-product">
-                    <div class="info">
-                        <h2>Resident Evil 2</h2>
-                        <span>Playstation 5</span><i class="fa-solid fa-circle-check"></i></div>
-                    <div class="control-quantity">
-                        <i class="fa-solid fa-circle-plus fa-fw"></i>
-                        <span class="quantity">1</span>
-                        <i class="fa-solid fa-circle-minus"></i>
-                    </div>
-                    <div class="mony">
-                        <span class="price">$20</span>
-                        <span class="remove-product">Remove</span>
+            <div class="cart-products">
+                <div class="product">
+                    <img src="./img/pub-intro/halo-5.jpeg">
+                    <div class="info-product">
+                        <div class="info">
+                            <h2>Halo 5</h2>
+                            <span>Xbox One</span>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="control-quantity">
+                            <i class="fa-solid fa-circle-plus fa-fw" id="quantity-increment"></i>
+                            <span class="quantity">5</span>
+                            <i class="fa-solid fa-circle-minus fa-fw " id="quantity-decrement"></i>
+                        </div>
+                        <div class="mony">
+                            <span class="price">$20</span>
+                            <span class="remove-product">Remove</span>
+                        </div>
                     </div>
                 </div>
+                <div class="product">
+                    <img src="./img/pub-intro/resident-evil-2.png">
+                    <div class="info-product">
+                        <div class="info">
+                            <h2>Resident Evil 2</h2>
+                            <span>Playstation 5</span><i class="fa-solid fa-circle-check"></i></div>
+                        <div class="control-quantity">
+                            <i class="fa-solid fa-circle-plus fa-fw" id="quantity-increment"></i>
+                            <span class="quantity">1</span>
+                            <i class="fa-solid fa-circle-minus" id="quantity-decrement"></i>
+                        </div>
+                        <div class="mony">
+                            <span class="price">$20</span>
+                            <span class="remove-product">Remove</span>
+                        </div>
+                    </div>
 
 
-            </div> -->
-
+                </div>
+            </div>
+            <div class="total-price">
+                <span class="payment neon-button gradient-button"><i class="fa-solid fa-money-check-dollar"></i>payment</span>
+                <span>Total <span class="price">50%</span></span>
+            </div>
         </div>
         <!--_____________________START HEADER_____________________-->
         <header>
@@ -132,7 +137,6 @@
                         <button class="neon-button" id="shop"> <i class="fa-brands fa-shopify"></i>Shop Now</button>
                     </div>
                     <div class="brand">
-
                         <img src="/img/rain/alan_walker2.png" alt="">
                     </div>
                 </div>
@@ -250,7 +254,5 @@
     <script src="src/rainy.js"></script>
     <script src="src/switchColorMode.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
-
-
 
 </html>

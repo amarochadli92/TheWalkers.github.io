@@ -134,6 +134,7 @@ function showCart() {
     document.querySelector(".container.cart-buy").toggleAttribute("selected");
     controlQuantity();
     controlRemoveProduct();
+    NotEmptyCart() ? getTotalPrice() : emptyTotal();
 }
 
 function addToCart() {
@@ -156,40 +157,43 @@ function addToCart() {
                 <i class=" fa-solid fa-circle-minus fa-fw" id="quantity-decrement"></i>
             </div>
             <div class="mony">
-                <span class="price">${data.price}</span>
+                <span class="price">$${data.price}</span>
                 <span class="remove-product" >Remove</span>
             </div>
         </div>
     </div>
-        `;
-        document.querySelector(".cart-buy").innerHTML += product;
-
-        getTotalPrice();
-
-        function getTotalPrice() {
-            console.log(document.querySelector(".cart-buy").children.length);
-            let x = document.querySelectorAll(".cart-buy .product");
-        }
+    `;
+        document.querySelector(".cart-products").innerHTML += product;
     }
 }
 
 function controlQuantity() {
-    document.querySelectorAll(".control-quantity").forEach((element) => {
+    document.querySelectorAll(".control-quantity").forEach((element, index) => {
         element.querySelector("#quantity-increment").onclick = () =>
-            increment(element);
+            increment(element, index);
         element.querySelector("#quantity-decrement").onclick = () =>
-            decrement(element);
+            decrement(element, index);
     });
 
-    function increment(element) {
+    function increment(element, index) {
         const quantity = element.querySelector("#quantity");
         const max = +quantity.dataset.maxQuantity;
         parseInt(quantity.innerHTML) < max && quantity.innerHTML++;
+        let prix = calcQuantityProduct(index);
     }
 
-    function decrement(element) {
+    function decrement(element, index) {
         const quantity = element.querySelector("#quantity");
         parseInt(quantity.innerHTML) != 1 && quantity.innerHTML--;
+    }
+
+    function calcQuantityProduct(index) {
+        let prix_own = getPriceOwn();
+
+        function getPriceOwn() {
+            return +document
+                .querySelectorAll(".cart-products  .price")[index].innerHTML.slice(1);
+        }
     }
 }
 
@@ -201,14 +205,32 @@ function controlRemoveProduct() {
     });
 
     function removeAllProduct() {
-        document.querySelectorAll(".cart-buy .product").forEach((product) => {
-            document.querySelector(".cart-buy").removeChild(product);
+        document.querySelectorAll(".cart-products .product").forEach((product) => {
+            document.querySelector(".cart-products").removeChild(product);
         });
     }
 
     function removeItem(index) {
-        document.querySelector(".cart-buy").removeChild(index);
+        document.querySelector(".cart-products").removeChild(index);
+        NotEmptyCart() ? getTotalPrice() : emptyTotal();
     }
+}
+
+function getTotalPrice() {
+    let total = 0;
+    let cart = document.querySelectorAll(".cart-products .product .price");
+    cart.forEach((e) => {
+        total += +e.innerHTML.slice(1);
+    });
+    document.querySelector(".total-price .price").innerHTML = "$" + total;
+}
+
+function NotEmptyCart() {
+    return document.querySelector(".cart-products").children.length > 0;
+}
+
+function emptyTotal() {
+    document.querySelector(".total-price .price").innerHTML = "$0";
 }
 
 /**

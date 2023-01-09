@@ -167,6 +167,20 @@ body {
     right: 10px;
 }
 
+.gradient-button {
+    background-color: var(--product-info-background);
+    text-transform: uppercase;
+    background-size: 200% auto;
+    border: none;
+}
+
+.gradient-button:hover {
+    background-image: linear-gradient( to right, transparent 0%, var(--second-Color) 51%, transparent 100%);
+    background-position: center center;
+    text-decoration: none;
+    color: white;
+}
+
 
 /* Small */
 
@@ -255,6 +269,7 @@ main .container.cart-buy {
     gap: 20px;
     left: 50%;
     top: 50%;
+    height: 60vh;
     max-height: 60vh;
     scrollbar-color: var(--scrollbar-color) #111416;
     scrollbar-width: thin;
@@ -306,6 +321,12 @@ main .container.cart-buy[selected] {
     text-decoration: none;
 }
 
+.cart-buy .cart-products {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .cart-buy .product {
     display: flex;
     justify-content: space-between;
@@ -314,7 +335,8 @@ main .container.cart-buy[selected] {
 }
 
 .cart-buy .product img {
-    width: 100px !important;
+    width: 150px !important;
+    height: 200px;
 }
 
 .cart-buy .product .info-product {
@@ -334,7 +356,8 @@ main .container.cart-buy[selected] {
 
 .cart-buy .product .info-product .info h2 {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: var(--fourth-Color);
 }
 
 .cart-buy .product .info-product .info span {
@@ -391,6 +414,46 @@ main .container.cart-buy[selected] {
 .cart-buy .product .info-product .mony .remove-product {
     color: red;
     text-decoration: underline;
+}
+
+.cart-buy .total-price {
+    text-align: right;
+    font-size: 2rem;
+    border-top: 1px solid var(--second-Color);
+    padding-top: 20px;
+    color: var(--fourth-Color);
+}
+
+.cart-buy .total-price .price {
+    color: var(--second-Color);
+}
+
+.cart-buy .total-price {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+}
+
+.cart-buy .total-price .payment {
+    padding: 5px 15px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.cart-buy .total-price .payment i {
+    padding-right: 10px;
+}
+
+.cart-buy .total-price .payment:hover:not(i) {
+    background-image: linear-gradient( to right, black 0%, var(--first-Color) 51%, black 100%);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--second-Color);
+}
+
+.cart-buy .total-price .payment:hover i {
+    color: rgb(189, 166, 37);
 }
 
 header {
