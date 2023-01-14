@@ -20,7 +20,7 @@
         "name": "BlueRay God Of War |||",
         "discount": 25,
         "currency": "$",
-        "price": 50,
+        "price": 500,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (3).png",
         "quantity": 10
@@ -38,7 +38,7 @@
         "name": "BlueRay God  no no Of War |||",
         "discount": 10,
         "currency": "$",
-        "price": 50,
+        "price": 500,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (4).png",
         "quantity": 10
@@ -47,7 +47,7 @@
         "name": "BlueRay God  no no Of War |||",
         "discount": 10,
         "currency": "$",
-        "price": 50,
+        "price": 500,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (9).png",
         "quantity": 10
@@ -56,7 +56,7 @@
         "name": "Halo 5",
         "discount": 10,
         "currency": "$",
-        "price": 50,
+        "price": 500,
         "platform": "Xbox One",
         "img": "../img/pub-intro/halo-5.jpeg",
         "quantity": 10

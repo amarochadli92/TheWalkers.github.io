@@ -48,56 +48,6 @@
             <i id="rain" class="fa-brands fa-xbox"></i>
             <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
         </div>
-        <div class="container cart-buy">
-            <div class="info-shopping-cart">
-                <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
-                <span class="remove-all">Remove All</span>
-            </div>
-            <div class="cart-products">
-                <div class="product">
-                    <img src="./img/pub-intro/halo-5.jpeg">
-                    <div class="info-product">
-                        <div class="info">
-                            <h2>Halo 5</h2>
-                            <span>Xbox One</span>
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                        <div class="control-quantity">
-                            <i class="fa-solid fa-circle-plus fa-fw" id="quantity-increment"></i>
-                            <span class="quantity">5</span>
-                            <i class="fa-solid fa-circle-minus fa-fw " id="quantity-decrement"></i>
-                        </div>
-                        <div class="mony">
-                            <span class="price">$20</span>
-                            <span class="remove-product">Remove</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="./img/pub-intro/resident-evil-2.png">
-                    <div class="info-product">
-                        <div class="info">
-                            <h2>Resident Evil 2</h2>
-                            <span>Playstation 5</span><i class="fa-solid fa-circle-check"></i></div>
-                        <div class="control-quantity">
-                            <i class="fa-solid fa-circle-plus fa-fw" id="quantity-increment"></i>
-                            <span class="quantity">1</span>
-                            <i class="fa-solid fa-circle-minus" id="quantity-decrement"></i>
-                        </div>
-                        <div class="mony">
-                            <span class="price">$20</span>
-                            <span class="remove-product">Remove</span>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="total-price">
-                <span class="payment neon-button gradient-button"><i class="fa-solid fa-money-check-dollar"></i>payment</span>
-                <span>Total <span class="price">50%</span></span>
-            </div>
-        </div>
         <!--_____________________START HEADER_____________________-->
         <header>
             <div class="container">
@@ -120,6 +70,71 @@
             </div>
         </header>
         <!--_____________________ END HEADER _____________________-->
+        <!--_____________________ START CART BUY _____________________-->
+        <div class="container cart-buy">
+            <div class="info-shopping-cart">
+                <h2>Shopping Cart <i class="fa-solid fa-cart-shopping"></i></h2>
+                <span class="remove-all">Remove All</span>
+            </div>
+            <div class="cart-products">
+
+
+            </div>
+            <div class="total-price">
+                <span class="payment neon-button gradient-button"><i class="fa-solid fa-money-check-dollar"></i>payment</span>
+                <span class="total">Total <span class="price">50%</span></span>
+            </div>
+        </div>
+        <div class="container card-payment glass-black">
+            <img src="img/card-bank.png">
+            <h1 class="title">Confirm Payment</h1>
+            <form>
+                <label for="card-number">Card Number</label>
+                <div id="card-number">
+                    <input type="number" maxlength="4" required>
+                    <input type="number" maxlength="4" required>
+                    <input type="number" maxlength="4" required>
+                    <input type="number" maxlength="4" required>
+                </div>
+                <label for="card-holder">Card Holder</label>
+                <input id="card-holder" type="text" minlength="4" required>
+                <div class="info">
+                    <div class="expiration-month">
+                        <label for="expiration-month">Expiration mm</label>
+                        <select name="" id="expiration-month" class="expiration">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                </select>
+                    </div>
+                    <div class="expiration-year">
+                        <label for="expiration-year">Expiration yy</label>
+                        <input id="expiration-year" type="number" min="2023" maxlength="4">
+                    </div>
+                    <div class="cvv">
+                        <label for="">cvv</label>
+                        <input type="number" maxlength="4" min="000" id="cvv">
+                    </div>
+                </div>
+
+
+                <div class="control">
+                    <button class="cancel-payment">cancel</button>
+                    <input class="" type="submit" value="Payment">
+                </div>
+            </form>
+        </div>
+
+        <!--_____________________ END CART BUY _____________________-->
         <!--_____________________ START INTRO COMPANY _____________________-->
         <section id="intro-company" class="intro-company">
             <img class="hero hero-one" src="/img/intro.png">
