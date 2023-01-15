@@ -10,6 +10,8 @@ const card_payment = document.querySelector(".card-payment");
 
 /* ADD EVENT DOM_CONTENT_LOADED FOR START ANIMATION */
 document.addEventListener("DOMContentLoaded", () => animationIntro());
+//
+let all_validation = [];
 
 /* FOR SLIDE CLASSES IN NAV LINK */
 slidClasses(nav_bar, "active");
@@ -144,26 +146,22 @@ function showCart() {
     calcTotal();
 
     // ON CLICK SHOW CARD PAYMENT FOR PAYMENT
-    cart_buy.querySelector(".payment").onclick = () => showPaymentCard();
+    cart_buy.querySelector(".payment").onclick = () => toggleCardPayment();
 }
 
-function showPaymentCard() {
+function toggleCardPayment() {
     // GET ELEMENT DOM
     const btn_cancel = card_payment.querySelector(".cancel-payment");
+    // IF CLICKED BTN CANCEL CANCEL PAYMENT
+    btn_cancel.onclick = (e) => cancelPayment(e);
+    // Emptying All Inputs Value
+    emptyingAllInputs();
     // FOR SHOW OR NONE CARD-PAYMENT
     card_payment.toggleAttribute("selected");
     // FOR HIDE CART-BUY
     cart_buy.toggleAttribute("selected");
-    // IF CLICKED BTN CANCEL CANCEL PAYMENT
-    btn_cancel.onclick = (e) => cancelPayment(e);
-    // Validation Card Number
-    validationCardNumber();
-    // Validation Name
-    validationName();
-    // Validation Expiration Date
-    validationExpirationDate();
-    // VALIDATION CVV
-    validationCvv();
+    // Start All Validation Inputs Value
+    startAllValidation();
 }
 
 function addToCart() {
@@ -280,27 +278,117 @@ function calcTotal() {
     }
 }
 
+function startAllValidation() {
+    // CHECK Card Number
+    checkCardNumber();
+    // CHECK Name
+    checkName();
+    // CHECK Expiration Date
+    checkExpirationDate();
+    // CHECK CVV
+    checkCvv();
+    // Check Payment
+    checkPayment();
+
+    function checkPayment() {
+        let form = card_payment.querySelector("form");
+        const payment_btn = card_payment.querySelector("[type='submit']");
+
+        payment_btn.onclick = (e) => {
+            e.preventDefault();
+            validationAllInput() ? successfulPayment(form) : rejectedPayment(form);
+        };
+    }
+}
+
+function successfulPayment(form) {
+    let ele_successful = successful(form); // Return Element Html for Success
+    let exit_btn = ele_successful.querySelector("button"); // Button Exit After Success Payment
+    exit_btn.addEventListener("click", () => exitPayment(form));
+
+    function successful(form) {
+        card_payment.removeChild(form);
+        let div = document.createElement("div");
+        div.className = "successful-pay";
+        let h1 = document.createElement("h1");
+        h1.innerHTML = "successful pay <i class='fa-solid fa-check-double'></i>";
+        let exit_btn = document.createElement("button");
+        exit_btn.innerHTML = "Exit";
+        div.appendChild(h1);
+        div.appendChild(exit_btn);
+        card_payment.appendChild(div);
+        return div;
+    }
+}
+
+function rejectedPayment() {}
+
+function exitPayment() {
+    card_payment.removeChild(ele_successful);
+    card_payment.appendChild(form);
+    toggleCardPayment();
+    emptyingCart();
+}
+
+function emptyingCart() {
+    document.querySelector(".cart-products").innerHTML = "";
+}
+
+function validationAllInput() {
+    // Start Validation
+    all_validation[0] = validation(main.querySelectorAll("#card-number > input")); // Validation Card Number
+    all_validation[1] = validation(main.querySelector("#card-holder")); // Validation Card Holder
+    all_validation[2] = validation(main.querySelector("#expiration-month")); // Validation Expiration Month
+    all_validation[3] = validation(main.querySelector("#expiration-year")); // Validation Expiration Year
+    all_validation[4] = validation(main.querySelector("#cvv")); // Validation Cvv
+
+    // Validation All
+    const check_all_validation = all_validation.every((valid) => {
+        return valid == true;
+    });
+
+    return check_all_validation;
+
+    function validation(target) {
+        if (target.length == 4)
+        // Check If Is Card Number Because Card Number We Have 4 Input
+            return Array.from(target).every((input) => input.className == "done");
+        return target.className == "done";
+    }
+}
+
+function emptyingAllInputs() {
+    card_payment
+        .querySelectorAll("input:not([type='submit']), select")
+        .forEach((input) => {
+            input.value = "";
+            input.className = "";
+        });
+}
+
 function cancelPayment(event) {
     event.preventDefault();
     cart_buy.toggleAttribute("selected");
     card_payment.toggleAttribute("selected");
 }
 
-function validationCardNumber() {
+function checkCardNumber() {
     const allInput = card_payment.querySelectorAll("#card-number > input");
     allInput.forEach((input, index) => {
         input.oninput = () => {
             // CHECK IF NOT OVERFLOW
-            overflowLength(input) && blockInput(input);
-            checkIfFinished(input) ? idDone(input) : idError(input);
+            if (input.value != "") {
+                overflowLength(input) && blockInput(input);
+                checkIfFinished(input) ? $class(input, "done") : $class(input, "error");
+            }
         };
     });
 }
 
-function validationName() {
-    let nameInput = card_payment.querySelector("#card-holder");
-    nameInput.oninput = () => {
-        checkName(nameInput) ? idDone(nameInput) : idError(nameInput);
+function checkName() {
+    let i_name = card_payment.querySelector("#card-holder");
+    i_name.oninput = () => {
+        checkName(i_name) ? $class(i_name, "done") : $class(i_name, "error");
     };
 
     function checkName(name) {
@@ -308,17 +396,17 @@ function validationName() {
     }
 }
 
-function validationExpirationDate() {
-    const input_month = card_payment.querySelector("#expiration-month");
-    const input_year = card_payment.querySelector("#expiration-year");
+function checkExpirationDate() {
+    const i_month = card_payment.querySelector("#expiration-month");
+    const i_year = card_payment.querySelector("#expiration-year");
 
-    input_year.oninput = () => {
-        overflowLength(input_year) && blockInput(input_year);
-        checkYearInput(input_year) ? idDone(input_year) : idError(input_year);
+    i_year.oninput = () => {
+        overflowLength(i_year) && blockInput(i_year);
+        checkYearInput(i_year) ? $class(i_year, "done") : $class(i_year, "error");
     };
 
-    input_month.oninput = () => {
-        checkMonth(input_month) ? idDone(input_month) : idError(input_month);
+    i_month.oninput = () => {
+        checkMonth(i_month) ? $class(i_month, "done") : $class(i_month, "error");
     };
 
     function checkMonth(month) {
@@ -330,24 +418,20 @@ function validationExpirationDate() {
     }
 }
 
-function validationCvv() {
-    const input_cvv = document.querySelector("#cvv");
-    input_cvv.oninput = () => {
-        overflowLength(input_cvv) && blockInput();
-        checkCvv(input_cvv) ? idDone(input_cvv) : idError(input_cvv);
+function checkCvv() {
+    const i_cvv = document.querySelector("#cvv");
+    i_cvv.oninput = () => {
+        overflowLength(i_cvv) && blockInput(i_cvv);
+        checkCvv(i_cvv) ? $class(i_cvv, "done") : $class(i_cvv, "error");
     };
 
     function checkCvv(cvv) {
-        return cvv.value.match(/^[0-9]{3,4}$/) && !cvv.value.includes("0");
+        return cvv.value.match(/^[0-9]{3,4}$/);
     }
 }
 
-function idDone(input) {
-    input.id = "done";
-}
-
-function idError(input) {
-    input.id = "error";
+function $class(target, str) {
+    target.className = str;
 }
 
 function overflowLength(input) {

@@ -97,11 +97,11 @@
                     <input type="number" maxlength="4" required>
                 </div>
                 <label for="card-holder">Card Holder</label>
-                <input id="card-holder" type="text" minlength="4" required>
+                <input name="name" id="card-holder" type="text" minlength="4" required>
                 <div class="info">
-                    <div class="expiration-month">
+                    <div class="">
                         <label for="expiration-month">Expiration mm</label>
-                        <select name="" id="expiration-month" class="expiration">
+                        <select name="exp-mm" id="expiration-month">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -116,20 +116,18 @@
                 <option value="12">12</option>
                 </select>
                     </div>
-                    <div class="expiration-year">
+                    <div class="">
                         <label for="expiration-year">Expiration yy</label>
-                        <input id="expiration-year" type="number" min="2023" maxlength="4">
+                        <input id="expiration-year" type="number" min="2023" maxlength="4" name="exp-yy">
                     </div>
                     <div class="cvv">
                         <label for="">cvv</label>
-                        <input type="number" maxlength="4" min="000" id="cvv">
+                        <input type="number" maxlength="4" min="000" id="cvv" name="cvv">
                     </div>
                 </div>
-
-
                 <div class="control">
                     <button class="cancel-payment">cancel</button>
-                    <input class="" type="submit" value="Payment">
+                    <input type="submit" value="Payment">
                 </div>
             </form>
         </div>

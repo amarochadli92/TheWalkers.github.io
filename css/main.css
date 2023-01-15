@@ -575,7 +575,8 @@ main .container.cart-buy[selected] {
     left: 50%;
     top: 50%;
     height: fit-content;
-    max-height: 60vh;
+    min-height: 50vh;
+    max-height: 50vh;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -598,7 +599,7 @@ main .container.cart-buy[selected] {
 .card-payment img {
     width: 300px;
     position: absolute;
-    top: -70%;
+    top: -60%;
     left: 50%;
     transform: translate(-50%, 50%);
     -webkit-transform: translate(-50%, 50%);
@@ -610,7 +611,27 @@ main .container.cart-buy[selected] {
 .card-payment form {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    justify-content: center;
     gap: 10px;
+}
+
+.card-payment .successful-pay {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.card-payment .successful-pay i {
+    color: green;
+}
+
+.card-payment .successful-pay button {
+    width: fit-content !important;
+    padding: 10px 25px;
 }
 
 :is(.card-payment) :is(input,
@@ -667,14 +688,14 @@ button {
     -webkit-filter: drop-shadow(0 0 3px var(--second-Color)) !important;
 }
 
-.card-payment form input#done,
-.card-payment form select#done {
+.card-payment form input.done,
+.card-payment form select.done {
     outline: 1px solid green;
     filter: drop-shadow(0 0 3px green);
     -webkit-filter: drop-shadow(0 0 3px green);
 }
 
-.card-payment form input#error {
+.card-payment form input.error {
     outline: 1px solid red;
     filter: drop-shadow(0 0 3px red);
     -webkit-filter: drop-shadow(0 0 3px red);
@@ -694,10 +715,12 @@ button {
 .card-payment form .control {
     display: inline-flex;
     gap: 3%;
+    margin-top: 30px;
 }
 
 .card-payment form [type="submit"],
-.card-payment form button {
+.card-payment form button,
+.card-payment .successful-pay button {
     border: 2px solid var(--second-Color);
     text-transform: uppercase;
     width: 50%;
@@ -717,7 +740,8 @@ button {
     color: red;
 }
 
-.card-payment form [type="submit"]:hover {
+.card-payment form [type="submit"]:hover,
+.card-payment .successful-pay button:hover {
     outline: 1px solid var(--second-Color);
     filter: drop-shadow(0 0 1px var(--second-Color));
     -webkit-filter: drop-shadow(0 0 1px var(--second-Color));
