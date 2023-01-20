@@ -1,5 +1,5 @@
 /** CLASS PRODUCT FOR BUILD DIV PRODUCT + APPEND IN PLACE WE SHOULD SHOW IN PAGE*/
-export class Product {
+class Product {
     constructor(prod, target) {
         this.name = prod.name;
         this.product = prod;
@@ -114,6 +114,8 @@ export class Product {
                 button.dataset.quantity = product.quantity;
                 button.dataset.quantity = product.quantity;
                 button.dataset.dirImg = product.img;
+                button.dataset.id = product.id;
+                button.dataset.categories = product.categories;
             }
         }
 
@@ -131,9 +133,7 @@ export class Product {
 
         function showProduct(target) {
             product.appendChild(product_info);
-            if (target.children[0].classList[2] == "is-loading") {
-                target.innerHTML = "";
-            }
+            checkIfIsLoading(target) && emptying(target);
             target.appendChild(product);
         }
     }
@@ -148,3 +148,14 @@ export class Product {
 function checkIfDiscounted(product) {
     return !product.discount ? product.price : product.price - product.discount;
 }
+
+function checkIfIsLoading(target) {
+    return target.classList.contains("loading-products");
+}
+
+function emptying(target) {
+    target.classList.remove("loading-products");
+    target.innerHTML = "";
+}
+
+export { Product, emptying, checkIfIsLoading };

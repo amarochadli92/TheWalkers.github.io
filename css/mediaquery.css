@@ -179,6 +179,28 @@
 /* END CART BUY */
 
 
+/* START CART PAYMENT */
+
+@media (max-width: 768px) {
+    .card-payment {
+        width: 95%;
+    }
+    .card-payment img {
+        display: none;
+    }
+    .card-payment .title {
+        padding: 0;
+        font-size: 1.2rem;
+    }
+    .card-payment form label {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* END CART PAYMENT */
+
+
 /* START INTRO COMPANY */
 
 @media (max-width: 991px) {

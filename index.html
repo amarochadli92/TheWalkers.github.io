@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Venom Game</title>
     <!-- Css Main StyleSheet File -->
-
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" class="tiny-slider"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/swiperLib.css">
     <link rel="stylesheet" href="css/mediaquery.css" />
@@ -20,7 +16,6 @@
     <link rel="stylesheet" href="css/all.css" />
     <!-- For Google Fonts  -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800;900&display=swap" />
-
 </head>
 
 <body>
@@ -58,7 +53,7 @@
                 <nav>
                     <a class="link active" href="#intro-company"><i class="fa-solid fa-house"></i>Home</a>
                     <a class="link" href="#discount"><i class="fa-solid fa-tags"></i>Discount</a>
-                    <a class="link " href="#"><i class="fa-solid fa-address-card"></i>Shop Now</a>
+                    <a class="link " href="#shop-now"><i class="fa-solid fa-address-card"></i>Shop Now</a>
                     <a class="link " href="#"><i class="fa-solid fa-address-card"></i>About</a>
                     <a class="link" href="#"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
                 </nav>
@@ -66,7 +61,6 @@
                     <button class="neon-button cart"><i class="fa-solid fa-bag-shopping"></i><span>Your Cart</span></button>
                     <button class="neon-button"><i class="fa-solid fa-right-to-bracket"></i><span>Login</span></button>
                 </div>
-
             </div>
         </header>
         <!--_____________________ END HEADER _____________________-->
@@ -77,8 +71,6 @@
                 <span class="remove-all">Remove All</span>
             </div>
             <div class="cart-products">
-
-
             </div>
             <div class="total-price">
                 <span class="payment neon-button gradient-button"><i class="fa-solid fa-money-check-dollar"></i>payment</span>
@@ -88,33 +80,33 @@
         <div class="container card-payment glass-black">
             <img src="img/card-bank.png">
             <h1 class="title">Confirm Payment</h1>
-            <form>
+            <form method="">
                 <label for="card-number">Card Number</label>
                 <div id="card-number">
-                    <input type="number" maxlength="4" required>
-                    <input type="number" maxlength="4" required>
-                    <input type="number" maxlength="4" required>
-                    <input type="number" maxlength="4" required>
+                    <input type="number" maxlength="4" required/>
+                    <input type="number" maxlength="4" required/>
+                    <input type="number" maxlength="4" required/>
+                    <input type="number" maxlength="4" required/>
                 </div>
                 <label for="card-holder">Card Holder</label>
                 <input name="name" id="card-holder" type="text" minlength="4" required>
                 <div class="info">
-                    <div class="">
+                    <div>
                         <label for="expiration-month">Expiration mm</label>
                         <select name="exp-mm" id="expiration-month">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                </select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
                     </div>
                     <div class="">
                         <label for="expiration-year">Expiration yy</label>
@@ -131,7 +123,6 @@
                 </div>
             </form>
         </div>
-
         <!--_____________________ END CART BUY _____________________-->
         <!--_____________________ START INTRO COMPANY _____________________-->
         <section id="intro-company" class="intro-company">
@@ -158,16 +149,16 @@
         <!--_____________________ END INTRO COMPANY _____________________-->
         <!--____________________ START DISCOUNT SECTION _____________________-->
         <section id="discount">
-            <div class="text-intro">
+            <h2 class="text-intro">
                 For The Republic
-            </div>
+            </h2>
             <div class="container">
                 <h2 class="title-section"><span>DISCOUNT</span></h2>
                 <!--START SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
                 <!-- Slider main container -->
                 <div class="swiper mySwiper">
-                    <div class="swiper-wrapper discount-products">
-                        <div class="swiper-slide product is-loading ">
+                    <div class="swiper-wrapper discount-products loading-products">
+                        <div class="product is-loading swiper-slide">
                             <div class="img"></div>
                             <div class="product-info">
                                 <div class="details ">
@@ -184,7 +175,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide product is-loading">
+                        <div class="product is-loading swiper-slide">
+                            <div class="img"></div>
+                            <div class="product-info">
+                                <div class="details ">
+                                    <span class="product-name"></span>
+                                    <span class="product-platform"></span>
+                                    <span class="prix"><span class="old"></span></span>
+                                    <span class="now"></span></span>
+                                </div>
+                                <div class="buy"><button></button>
+                                    <div class="quantity"><span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="stars"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product is-loading swiper-slide">
                             <div class="img"></div>
                             <div class="product-info">
                                 <div class="details ">
@@ -201,7 +209,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide product is-loading ">
+                        <div class="product is-loading swiper-slide">
                             <div class="img"></div>
                             <div class="product-info">
                                 <div class="details ">
@@ -218,24 +226,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide product is-loading">
-                            <div class="img"></div>
-                            <div class="product-info">
-                                <div class="details ">
-                                    <span class="product-name"></span>
-                                    <span class="product-platform"></span>
-                                    <span class="prix"><span class="old"></span>
-                                    <span class="now"></span></span>
-                                </div>
-                                <div class="buy"><button></button>
-                                    <div class="quantity"><span></span>
-                                        <span></span>
-                                    </div>
-                                    <div class="stars"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" swiper-slideproduct is-loading">
+                        <div class="product is-loading swiper-slide">
                             <div class="img"></div>
                             <div class="product-info">
                                 <div class="details ">
@@ -258,14 +249,145 @@
                     <div class="swiper-pagination"></div>
                 </div>
                 <!-- END SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
+            </div>
         </section>
         <!--_____________________END DISCOUNT SECTION_____________________-->
+        <!--_____________________START SHOP NOW SECTION_____________________-->
+        <section id="shop-now">
+            <div class="container">
+                <h2 class="title-section"><span>SHOP NOW</span></h2>
+                <div class="search">
+                    <input type="search" name="" id="">
+                    <i class="fa-brands fa-searchengin"></i>
+                </div>
+                <div class="filter">
+                    <select name="platform" id="platform">
+                        <option value="all">All</option>
+                        <option value="Playstation 3">Playstation 3</option>
+                        <option value="Playstation 4">Playstation 4</option>
+                        <option value="Playstation 5">Playstation 5</option>
+                        <option value="Xbox One">Xbox One</option>
+                        <option value="Xbox Series X">Xbox Series X</option>
+                        <option value="Nintendo Switch">Nintendo Switch</option>
+                    </select>
+                    <select name="category" id="category">
+                        <option value="all">All</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Devices">Devices</option>
+                        <option value="Games">Games</option>
+                        <option value="Card Gift">Card Gift</option>
+                    </select>
+                    <div class="rang-price">
+                        <input id="min" type="number" min="1" placeholder="Min Price">
+                        <input id="max" type="number" placeholder="Max Price">
+                    </div>
+                </div>
+                <button class="btn-filter">Filter<i class="fa-solid fa-filter"></i></button>
+                <div class="all-products loading-products">
+                    <div class="product is-loading">
+                        <div class="img"></div>
+                        <div class="product-info">
+                            <div class="details ">
+                                <span class="product-name"></span>
+                                <span class="product-platform"></span>
+                                <span class="prix"><span class="old"></span>
+                                <span class="now"></span></span>
+                            </div>
+                            <div class="buy"><button></button>
+                                <div class="quantity"><span></span>
+                                    <span></span>
+                                </div>
+                                <div class="stars"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product is-loading">
+                        <div class="img"></div>
+                        <div class="product-info">
+                            <div class="details ">
+                                <span class="product-name"></span>
+                                <span class="product-platform"></span>
+                                <span class="prix"><span class="old"></span></span>
+                                <span class="now"></span></span>
+                            </div>
+                            <div class="buy"><button></button>
+                                <div class="quantity"><span></span>
+                                    <span></span>
+                                </div>
+                                <div class="stars"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product is-loading ">
+                        <div class="img"></div>
+                        <div class="product-info">
+                            <div class="details ">
+                                <span class="product-name"></span>
+                                <span class="product-platform"></span>
+                                <span class="prix"><span class="old"></span>
+                                <span class="now"></span></span>
+                            </div>
+                            <div class="buy"><button></button>
+                                <div class="quantity"><span></span>
+                                    <span></span>
+                                </div>
+                                <div class="stars"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product is-loading">
+                        <div class="img"></div>
+                        <div class="product-info">
+                            <div class="details ">
+                                <span class="product-name"></span>
+                                <span class="product-platform"></span>
+                                <span class="prix"><span class="old"></span>
+                                <span class="now"></span></span>
+                            </div>
+                            <div class="buy"><button></button>
+                                <div class="quantity"><span></span>
+                                    <span></span>
+                                </div>
+                                <div class="stars"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product is-loading">
+                        <div class="img"></div>
+                        <div class="product-info">
+                            <div class="details ">
+                                <span class="product-name"></span>
+                                <span class="product-platform"></span>
+                                <span class="prix"><span class="old"></span>
+                                <span class="now"></span></span>
+                            </div>
+                            <div class="buy"><button></button>
+                                <div class="quantity"><span></span>
+                                    <span></span>
+                                </div>
+                                <div class="stars"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!--_____________________END SHOP NOW SECTION_____________________-->
+        <!--_____________________START ABOUT SECTION_____________________-->
+        <section id="about">
+            <div class="container">
+                <h2 class="title-section"><span>About</span></h2>
+            </div>
+        </section>
     </main>
-    <script type="module" src="src/index.js"></script>
-    <script type="module" src="src/sliders.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="src/rainy.js"></script>
-    <script src="src/switchColorMode.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+</body>
+<script type="module" src="src/getData.js"></script>
+<script type="module" src="src/sliders.js"></script>
+<script type="module" src="src/cardPayment.js"></script>
+<script type="module" src="src/index.js"></script>
+<script type="module" src="src/filterProducts.js"></script>
+<script type="module" src="src/classProduct.js"></script>
+<script src="src/rainy.js"></script>
+<script src="src/nav_bar.js"></script>
+<script src="src/animation.js"></script>
 
 </html>

@@ -1,8 +1,7 @@
 import { Swiper } from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
-import { created_element as check } from "./index.js";
-
+import { checkDiscountProducts } from "./getData.js";
+// checkDiscountProducts && newSwiper();
 newSwiper();
-check && newSwiper();
 
 function newSwiper() {
     var swiper = new Swiper(".mySwiper", {

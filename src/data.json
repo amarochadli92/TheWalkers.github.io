@@ -1,82 +1,111 @@
 [{
+        "id": 0,
         "name": "BluRay Watch Dogs 2",
         "discount": 25,
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/watch dogs_.jpg",
-        "quantity": 3
+        "quantity": 3,
+        "categories": "Games"
     },
     {
+        "id": 1,
         "name": "Controllers",
         "discount": 25,
         "currency": "$",
         "price": 50,
         "platform": "Playstation 5",
         "img": "../img/pub-intro/pngegg (2).png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Games"
     },
     {
+        "id": 2,
         "name": "BlueRay God Of War |||",
         "discount": 25,
         "currency": "$",
         "price": 500,
-        "platform": "Playstation 4",
+        "platform": "Playstation4",
         "img": "../img/pub-intro/pngegg (3).png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Games"
     },
     {
+        "id": 3,
         "name": "BlueRay God  no no Of War |||",
         "discount": false,
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (3).png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Games"
     },
     {
+        "id": 4,
         "name": "BlueRay God  no no Of War |||",
         "discount": 10,
         "currency": "$",
         "price": 500,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (4).png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Games"
     },
     {
+        "id": 5,
         "name": "BlueRay God  no no Of War |||",
         "discount": 10,
         "currency": "$",
         "price": 500,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/pngegg (9).png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Games"
     },
     {
+        "id": 6,
         "name": "Halo 5",
         "discount": 10,
         "currency": "$",
         "price": 500,
         "platform": "Xbox One",
         "img": "../img/pub-intro/halo-5.jpeg",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Devices"
     },
     {
+        "id": 7,
         "name": "Mario",
         "discount": 10,
         "currency": "$",
         "price": 50,
-        "platform": "Nitando Switch",
+        "platform": "Nintendo Switch",
         "img": "../img/pub-intro/mario.png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Accessories"
     },
     {
+        "id": 8,
         "name": "Resident Evil 2",
         "discount": 10,
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
         "img": "../img/pub-intro/resident-evil-2.png",
-        "quantity": 10
+        "quantity": 10,
+        "categories": "Accessories"
+    },
+    {
+        "id": 9,
+        "name": "shadows 92",
+        "discount": false,
+        "currency": "$",
+        "price": 5,
+        "platform": "Playstation 4",
+        "img": "../img/pub-intro/resident-evil-2.png",
+        "quantity": 10,
+        "categories": "Accessories"
     }
 ]

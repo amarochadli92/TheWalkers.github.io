@@ -3,7 +3,8 @@
 :root {
     --special-Box-Shadow: 0px 0px 51px 2px inset var(--first-Color);
     --transition-hover: 0.5s ease-in-out;
-    --first-Color: rgb(18, 18, 18);
+    /* --first-Color: rgb(18, 18, 18); */
+    --first-Color: rgba(3, 3, 3);
     --second-Color: #0078f2;
     --third-Color: #4ed01a;
     --fourth-Color: silver;
@@ -562,6 +563,9 @@ main .container.cart-buy[selected] {
 
 /*********************** END CART BUY ***************************/
 
+
+/*********************** START CARD PAYMENT ***************************/
+
 .card-payment {
     background-image: linear-gradient( 100deg, rgba(0, 0, 0, 0.1) 0%, black 51%, rgba(0, 0, 0, 0.7) 100%);
     background-size: 200% auto;
@@ -574,6 +578,7 @@ main .container.cart-buy[selected] {
     justify-content: space-between;
     left: 50%;
     top: 50%;
+    width: inherit;
     height: fit-content;
     min-height: 50vh;
     max-height: 50vh;
@@ -756,6 +761,9 @@ button {
 }
 
 
+/*********************** END CARD PAYMENT ***************************/
+
+
 /*********************** START INTRO-COMPANY ***************************/
 
 .intro-company {
@@ -765,7 +773,9 @@ button {
     position: relative;
     overflow-x: clip;
     background-color: rgb(18, 18, 18);
-    background-image: linear-gradient(-284deg, var(--first-Color) 50%, black 50%);
+    background-image: linear-gradient(-284deg, rgb(2, 2, 2) 50%, black 60%);
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .intro-company .container {
@@ -935,7 +945,8 @@ button {
     flex-direction: column;
 }
 
-#discount .swiper .product {
+:is(#discount .swiper,
+#shop-now .all-products) .product {
     position: relative;
     background: rgb(0, 0, 0, 0.3);
     height: 500px;
@@ -950,7 +961,8 @@ button {
     -o-border-radius: 10px;
 }
 
-#discount .swiper .product img {
+:is(#discount .swiper,
+#shop-now .all-products) .product img {
     max-width: 80%;
     height: 50%;
 }
@@ -980,7 +992,8 @@ button {
     background-color: var(--product-info-background);
 }
 
-#discount .swiper .product .product-info {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -994,14 +1007,16 @@ button {
     border-bottom-right-radius: 10px;
 }
 
-#discount .swiper .product .product-info .details .prix {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .details .prix {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-#discount .swiper .product .product-info .details .prix span {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .details .prix span {
     text-align: center;
     min-width: 70px;
     padding: 5px;
@@ -1012,12 +1027,14 @@ button {
     -o-border-radius: 50px;
 }
 
-#discount .swiper .product .product-info .details .prix span.old {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .details .prix span.old {
     background-color: var(--first-Color);
     position: relative;
 }
 
-#discount .swiper .product:not(.is-loading) .product-info .details .prix span.old::before {
+:is(#discount .swiper,
+#shop-now .all-products) .product:not(.is-loading) .product-info .details .prix span.old::before {
     content: "\f00d";
     font-family: "Font Awesome 6 Free";
     font-weight: 800;
@@ -1035,11 +1052,13 @@ button {
     filter: drop-shadow(0px 0px 10px red);
 }
 
-#discount .swiper .product .product-info .details .prix span.now {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .details .prix span.now {
     background-color: var(--product-info-background);
 }
 
-#discount .swiper .product .product-info .details {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .details {
     display: flex;
     flex-direction: column;
     color: var(--fourth-Color);
@@ -1048,10 +1067,9 @@ button {
     gap: 5px;
 }
 
-:is(.is-loading) :is( .details> :not(.prix),
+:is(.is-loading) :is(.details> :not(.prix),
 .prix>span,
 .buy>button,
-.quantity>span,
 .buy .stars,
 .img) {
     width: 100% !important;
@@ -1072,36 +1090,42 @@ button {
     border-bottom-right-radius: 0px !important;
 }
 
-#discount .swiper .product .product-info .buy,
-#discount .swiper .is-loading .product-info .buy {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy,
+:is(#discount .swiper,
+#shop-now .all-products) .is-loading .product-info .buy {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
 
-#discount .swiper .product .product-info .buy button {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy button {
     background-color: var(--product-info-background);
     text-transform: uppercase;
     background-size: 200% auto;
     border: none;
 }
 
-#discount .swiper .product .product-info .buy button:hover {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy button:hover {
     background-image: linear-gradient( to right, transparent 0%, var(--second-Color) 51%, transparent 100%);
     background-position: center center;
     text-decoration: none;
     color: white;
 }
 
-#discount .swiper .product .product-info .buy .quantity {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy .quantity {
     display: flex;
     justify-content: center;
     gap: 20px;
     color: var(--fourth-Color);
 }
 
-#discount .swiper .product .product-info .buy .quantity select {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy .quantity select {
     width: 50%;
     height: 100%;
     height: 24px !important;
@@ -1115,21 +1139,25 @@ button {
     -o-border-radius: 2px;
 }
 
-#discount .swiper .product .product-info .buy .quantity select option {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy .quantity select option {
     height: 100%;
 }
 
-#discount .swiper .product .product-info .buy .quantity select option {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .buy .quantity select option {
     background-color: black;
     color: white;
 }
 
-#discount .swiper .product .product-info .stars {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .stars {
     width: fit-content;
     margin: 0 auto;
 }
 
-#discount .swiper .product .product-info .stars i {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .stars i {
     color: gold;
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
@@ -1138,7 +1166,8 @@ button {
     -o-transition: transform 0.5s ease-out;
 }
 
-#discount .swiper .product .product-info .stars i:hover {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .stars i:hover {
     transform: rotate(1turn);
     -webkit-transform: rotate(1turn);
     -moz-transform: rotate(1turn);
@@ -1146,12 +1175,215 @@ button {
     -o-transform: rotate(1turn);
 }
 
-#discount .swiper .product .product-info .stars #done::before {
+:is(#discount .swiper,
+#shop-now .all-products) .product .product-info .stars #done::before {
     font-weight: 900 !important;
 }
 
 
 /***********************END DISCOUNT***************************/
+
+
+/***********************START SHOP NOW***************************/
+
+#shop-now {
+    background-image: linear-gradient(-284deg, var(--first-Color) 50%, black 50%);
+    background-attachment: fixed;
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#shop-now .title-section::before,
+#shop-now .title-section::after {
+    content: "\f290";
+}
+
+#shop-now .container .filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#shop-now .container .filter select,
+input {
+    background-color: var(--product-info-background);
+    border: none;
+    color: var(--fourth-Color);
+    padding: 5px 10px;
+}
+
+#shop-now .container .filter select option {
+    background-color: #111416;
+    text-transform: capitalize !important;
+}
+
+#shop-now .container .filter>* {
+    width: calc((100% - 2%) / 3);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#shop-now .container .filter .rang-price {
+    display: flex;
+    gap: 10px;
+}
+
+#shop-now .container .filter .rang-price>* {
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#shop-now .container .search {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#shop-now .container [type="search"] {
+    width: 100%;
+    padding: 15px 3.5rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#shop-now .container .search i {
+    font-size: 2rem;
+    position: absolute;
+    color: var(--fourth-Color);
+    top: 50%;
+    left: 1%;
+    z-index: 2;
+    filter: blur(1px);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-filter: blur(1px);
+}
+
+#shop-now .all-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 70vh;
+    position: relative;
+    padding: 10px;
+    z-index: 1;
+}
+
+#shop-now .all-products .not-found {
+    color: var(--fourth-Color);
+    text-transform: capitalize;
+    border: 1px solid var(--second-Color);
+    grid-column: 1 / 5;
+    width: fit-content;
+    padding: 15px 25px;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+#shop-now .all-products .product::before {
+    content: '';
+    background: linear-gradient(45deg, var(--second-Color), #cc0001, #fb940b, #FF907F, #ffff01, #01cc00, #03c0c6, #0000fe, #762ca7, #fe98bf);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 3px);
+    height: calc(100% + 3px);
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity .3s;
+    animation: glowing 20s linear infinite;
+    -webkit-animation: glowing 20s linear infinite;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+}
+
+#shop-now .all-products .product:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+#shop-now .all-products .product:hover::before {
+    opacity: 1;
+}
+
+#shop-now .all-products .product::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+:is(#shop-now,
+.filter) :is([type="search"],
+select,
+input,
+.btn-filter) {
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+
+:is(#shop-now,
+.filter) :is([type="search"],
+select,
+input):focus,
+#shop-now .btn-filter:hover,
+#shop-now .all-products .not-found {
+    filter: drop-shadow(0px 0px 10px var(--second-Color));
+    -webkit-filter: drop-shadow(0px 0px 10px var(--second-Color));
+    outline: 1px solid var(--second-Color);
+}
+
+#shop-now .container [type="search"]:focus+i {
+    filter: drop-shadow(0 0 20px var(--second-Color));
+    -webkit-filter: drop-shadow(0 0 20px var(--second-Color));
+    color: var(--fourth-Color);
+}
+
+#shop-now .btn-filter {
+    background-color: var(--product-info-background);
+    color: var(--fourth-Color);
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    padding: 5px 0;
+    border: none;
+    cursor: pointer;
+}
+
+
+/***********************END SHOP NOW***************************/
 
 
 /* Start Animation  */
@@ -1180,5 +1412,17 @@ button {
     }
 }
 
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
 
-/* End Animation  */
+
+/* End Animation  *
