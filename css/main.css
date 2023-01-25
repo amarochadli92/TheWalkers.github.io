@@ -43,7 +43,7 @@ html {
 
 @font-face {
     font-family: "rog";
-    src: url("/7032-fontps.ttf");
+    src: url("../7032-fontps.ttf");
 }
 
 body {
