@@ -12,6 +12,8 @@ let idInterval = setInterval(() => {
         startAnimationAbout(idInterval);
 }, 100);
 
+console.log(document.getElementById("marcus"));
+
 function checkScrollPosition(index) {
     let heightSection = document.querySelector("section").clientHeight;
     return window.scrollY >= heightSection * index;

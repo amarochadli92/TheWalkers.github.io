@@ -5,7 +5,7 @@
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/watch dogs_.jpg",
+        "img": "img/pub-intro/watch dogs_.jpg",
         "quantity": 3,
         "categories": "Games"
     },
@@ -16,7 +16,7 @@
         "currency": "$",
         "price": 50,
         "platform": "Playstation 5",
-        "img": "../img/pub-intro/pngegg (2).png",
+        "img": "img/pub-intro/pngegg (2).png",
         "quantity": 10,
         "categories": "Games"
     },
@@ -27,7 +27,7 @@
         "currency": "$",
         "price": 500,
         "platform": "Playstation4",
-        "img": "../img/pub-intro/pngegg (3).png",
+        "img": "img/pub-intro/pngegg (3).png",
         "quantity": 10,
         "categories": "Games"
     },
@@ -38,7 +38,7 @@
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/pngegg (3).png",
+        "img": "img/pub-intro/pngegg (3).png",
         "quantity": 10,
         "categories": "Games"
     },
@@ -49,7 +49,7 @@
         "currency": "$",
         "price": 500,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/pngegg (4).png",
+        "img": "img/pub-intro/pngegg (4).png",
         "quantity": 10,
         "categories": "Games"
     },
@@ -60,7 +60,7 @@
         "currency": "$",
         "price": 500,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/pngegg (9).png",
+        "img": "img/pub-intro/pngegg (9).png",
         "quantity": 10,
         "categories": "Games"
     },
@@ -71,7 +71,7 @@
         "currency": "$",
         "price": 500,
         "platform": "Xbox One",
-        "img": "/img/pub-intro/halo-5.jpeg",
+        "img": "img/pub-intro/halo-5.jpeg",
         "quantity": 10,
         "categories": "Devices"
     },
@@ -82,7 +82,7 @@
         "currency": "$",
         "price": 50,
         "platform": "Nintendo Switch",
-        "img": "../img/pub-intro/mario.png",
+        "img": "img/pub-intro/mario.png",
         "quantity": 10,
         "categories": "Accessories"
     },
@@ -93,7 +93,7 @@
         "currency": "$",
         "price": 50,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/resident-evil-2.png",
+        "img": "img/pub-intro/resident-evil-2.png",
         "quantity": 10,
         "categories": "Accessories"
     },
@@ -104,7 +104,7 @@
         "currency": "$",
         "price": 5,
         "platform": "Playstation 4",
-        "img": "../img/pub-intro/resident-evil-2.png",
+        "img": "img/pub-intro/resident-evil-2.png",
         "quantity": 10,
         "categories": "Accessories"
     }
