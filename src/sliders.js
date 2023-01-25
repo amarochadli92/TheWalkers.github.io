@@ -1,7 +1,9 @@
 import { Swiper } from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
-import { checkDiscountProducts } from "./getData.js";
-// checkDiscountProducts && newSwiper();
-newSwiper();
+import { createAllProducts } from "./getData.js";
+createAllProducts().then(() => {
+    newSwiper();
+    stars();
+});
 
 function newSwiper() {
     var swiper = new Swiper(".mySwiper", {
@@ -31,4 +33,21 @@ function newSwiper() {
             },
         },
     });
+}
+
+function stars() {
+    const stars = document.querySelectorAll(".stars i");
+    stars.forEach((star) => {
+        star.onclick = () =>
+            star.id != "done" ? rate(star, true) : rate(star, false);
+    });
+
+    function rate(star, check) {
+        let curr = star;
+        while (curr != null) {
+            curr.id = check ? "done" : "";
+            curr.style.transform = check ? "rotate(1turn)" : "rotate(-1turn)";
+            curr = check ? curr.previousElementSibling : curr.nextElementSibling;
+        }
+    }
 }

@@ -24,9 +24,9 @@ class RainObject {
             this.shape.onmouseout = () => {
                 this.shape.id = "rain";
             };
-            const end_height = getHeightEnd(height_one, height_two);
+            const end_height = getHeightEnd(height_one, height_two / 2);
             this.startRain(end_height);
-        });
+        }, 20);
     }
     startRain(end) {
         if (this.shape.id == "rain") {
