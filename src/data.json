@@ -71,7 +71,7 @@
         "currency": "$",
         "price": 500,
         "platform": "Xbox One",
-        "img": "../img/pub-intro/halo-5.jpeg",
+        "img": "/img/pub-intro/halo-5.jpeg",
         "quantity": 10,
         "categories": "Devices"
     },

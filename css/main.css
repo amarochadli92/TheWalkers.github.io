@@ -50,6 +50,7 @@ body {
     font-family: "M PLUS Rounded 1c", sans-serif;
     min-height: 100vh;
     background-color: #000;
+    color: var(--fourth-Color);
 }
 
 .glass-black {
