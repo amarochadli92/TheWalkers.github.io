@@ -1,23 +1,31 @@
-/* START ANIMATION INTRO */
-document.addEventListener("DOMContentLoaded", () => animationIntro());
+/* Start Global Functions */
 
-function animationIntro() {
+
+function checkEndLoading() {
+    return getComputedStyle(main).display == "inline";
+}
+/* End Global Functions */
+
+/* Start Animation Intro */
+let introInterval = setInterval(() => {
+    checkEndLoading() && animationIntro(introInterval);
+});
+
+function animationIntro(idInterval = false) {
     document.querySelector(".intro-company .intro").id = "coming";
+    idInterval && clearInterval(idInterval);
 }
-/* END ANIMATION INTRO */
+
+/* End Animation Intro */
 /* Start Animation About Section */
+
 let idInterval = setInterval(() => {
-    check("#about", 3) && startAnimationAbout(idInterval);
-    document.querySelector("#about").onmouseover = () =>
-        startAnimationAbout(idInterval);
-}, 100);
-
-console.log(document.getElementById("marcus"));
-
-function checkScrollPosition(index) {
-    let heightSection = document.querySelector("section").clientHeight;
-    return window.scrollY >= heightSection * index;
-}
+    if (checkEndLoading()) {
+        check("#about", 3) && startAnimationAbout(idInterval);
+        document.querySelector("#about").onmouseover = () =>
+            startAnimationAbout(idInterval);
+    }
+});
 
 function startAnimationAbout(idInterval = false) {
     document.querySelector("#about .about-logo").style.animationName =
