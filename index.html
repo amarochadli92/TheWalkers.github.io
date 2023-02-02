@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Venom Game</title>
-    <!-- Css Main StyleSheet File -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/swiperLib.css">
-    <link rel="stylesheet" href="css/mediaquery.css" />
     <!-- For Render All Elements Normalize Style -->
     <link rel="stylesheet" href="css/normalize.css" />
+    <!-- For Css Slider Library  -->
+    <link rel="stylesheet" href="css/swiperLib.css">
+    <!-- Css Main StyleSheet File -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Css For Responsive Styles -->
+    <link rel="stylesheet" href="css/mediaquery.css" />
     <!-- For Font Awesome 6 Free Library  -->
     <link rel="stylesheet" href="css/all.css" />
     <!-- For Google Fonts  -->
@@ -21,12 +23,10 @@
 <body>
     <div class="loading">
         <div class="circle-loading">
-
         </div>
         <div class="loading-text">
             <h1>Loading</h1>
             <h1>Loading</h1>
-
         </div>
     </div>
     <main class="" style="display: none;">
@@ -53,12 +53,11 @@
             <i id="rain" class="fa-brands fa-xbox"></i>
             <i id="rain" class="fa-sharp fa-solid fa-gamepad"></i>
         </div>
-
         <!--_____________________START HEADER_____________________-->
         <header>
             <div class="container">
                 <div class="logo">
-                    <img src="img/rain/alan_walker2.png" alt="" srcset="">
+                    <img src="img/logo/logo.png" alt="" srcset="">
                     <h1>The Walkers</h1>
                 </div>
                 <nav>
@@ -153,7 +152,7 @@
                         <button class="neon-button" id="shop"> <i class="fa-brands fa-shopify"></i>Shop Now</button>
                     </div>
                     <div class="brand">
-                        <img src="img/rain/alan_walker2.png" alt="">
+                        <img src="img/logo/logo.png" alt="">
                     </div>
                 </div>
             </div>
@@ -162,11 +161,10 @@
         <!--____________________ START DISCOUNT SECTION _____________________-->
         <section id="discount">
             <span class="special-text">The</span>
+            <h2 class="title-section"><span>DISCOUNT</span></h2>
             <div class="container">
-                <h2 class="title-section"><span>DISCOUNT</span></h2>
                 <!--START SLIDER FOR PRODUCT HAVE DISCOUNT USING TINY-SLIDER JS LIBRARY  -->
                 <!-- Slider main container -->
-
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper discount-products loading-products">
                         <div class="product is-loading swiper-slide">
@@ -266,8 +264,8 @@
         <!--_____________________START SHOP NOW SECTION_____________________-->
         <section id="shop-now">
             <span class="special-text">Republic</span>
+            <h2 class="title-section"><span>SHOP NOW</span></h2>
             <div class="container">
-                <h2 class="title-section"><span>SHOP NOW</span></h2>
                 <div class="search">
                     <input type="search" name="" id="">
                     <i class="fa-brands fa-searchengin"></i>
@@ -393,32 +391,81 @@
                     <img src="img/wernech.png" alt="" id="wernech">
                     <img src="img/marcus.png" alt="" id="marcus">
                     <div class="img-logo">
-                        <img src="img/rain/pngegg (12).png" alt="">
+                        <img src="img/logo/logo2.png" alt="">
                     </div>
                 </div>
                 <div class="about-text">
                     <span>E-Commerce For Sold All Product For Gamers Republic</span>
                     <img src="img/text-img.png" alt="">
                 </div>
-
             </div>
         </section>
         <!--_____________________END ABOUT SECTION_____________________-->
         <!--_____________________START CONTACT ME SECTION_____________________-->
         <section id="contact-me">
             <span class="special-text">Gaming</span>
+            <h2 class="title-section"><span>CONTACT ME</span></h2>
             <div class="container">
-                <h2 class="title-section"><span>CONTACT ME</span></h2>
-
-
-                <div class="contact">
-                    <div class="img">
-
-                    </div>
-                </div>
+                <form action="">
+                    <h1>Contact Us</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci consequatur magnam deserunt voluptatem architecto quas consectetur beatae doloribus labore, harum quidem cum veritatis voluptatibus tenetur obcaecati corporis! Voluptatum,
+                        tempora error?</p>
+                    <input type="text" name="name" placeholder="Your Name">
+                    <input type="email" name="email" placeholder="Your Email">
+                    <input type="text" name="message" placeholder="Your Message">
+                    <input type="submit" value="submit">
+                </form>
             </div>
         </section>
         <!--_____________________END CONTACT ME SECTION_____________________-->
+        <!--_____________________START FOOTER_____________________-->
+        <footer>
+            <div class="company">
+                <h1>Company <i class="fa-regular fa-building"></i></h1>
+                <ul>
+                    <li>About Us</li>
+                    <li>Our Services</li>
+                    <li>Privacy Policy</li>
+                    <li>Support</li>
+                </ul>
+            </div>
+            <div class="get-help">
+                <h1>Get Help <i class="fa-regular fa-circle-question"></i></h1>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Shipping</li>
+                    <li>Returns</li>
+                    <li>Order Status</li>
+                    <li>Payment Options</li>
+                </ul>
+            </div>
+            <div class="online-shop">
+                <h1><i class="fa-brands fa-shopify"></i>Shop Online</h1>
+                <ul>
+                    <li>Games</li>
+                    <li>Games Devices</li>
+                    <li>Accessories</li>
+                    <li>Card Gift</li>
+                </ul>
+            </div>
+            <div class="follow-us">
+                <h1>Follow Us <i class="fa-solid fa-share-nodes"></i></h1>
+                <div class="social">
+                    <a href="" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="github"><i class="fa-brands fa-github"></i></a>
+                    <a href="" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="address">
+                <h1>address <i class="fa-solid fa-location-dot"></i></h1>
+                <address>
+                <i class="fa-solid fa-earth-americas"></i> Algeria <br>
+                <i class="fa-solid fa-map-location-dot"></i> Algeria, Relizane
+            </address>
+            </div>
+        </footer>
+        <!--_____________________END FOOTER_____________________-->
     </main>
 </body>
 <script type="module" src="src/getData.js"></script>
@@ -429,7 +476,6 @@
 <script type="module" src="src/classProduct.js"></script>
 <script type="module" src="src/handleLoading.js"></script>
 <script type="module" src="src/animation.js"></script>
-
 <script src="src/rainy.js"></script>
 <script src="src/nav_bar.js"></script>
 

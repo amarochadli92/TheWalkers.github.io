@@ -40,10 +40,11 @@ class RainObject {
         this.x = x_position;
         this.y = y_position;
         this.check = check;
-        this.clientWidth = document.querySelector(".rain").clientWidth;
     }
     randomX() {
-        this.x = this.check ? this.x : getRandom(this.clientWidth);
+        this.x = this.check ?
+            this.x :
+            getRandom(document.querySelector(".rain").clientWidth - 48);
         this.shape.style.left = this.x + "px";
         this.y = this.check ? this.y : 0;
         this.shape.style.top = this.y + "px";

@@ -1,3 +1,58 @@
+/* Start Global Rules  */
+
+
+/* Start Container */
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Container */
+
+@media (max-width: 767px) {
+    .title-section {
+        padding: 10px 40px;
+        width: 60%;
+    }
+    .title-section span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    span.special-text {
+        display: none;
+    }
+}
+
+
+/* End Global Rules  */
+
+
 /* START HEADER */
 
 @media (max-width: 767px) {
@@ -24,10 +79,18 @@
         bottom: 0;
         justify-content: space-around !important;
         width: 100%;
-        background-color: var(--first-Color);
         z-index: 9;
         left: 0;
         height: 10%;
+    }
+    header nav::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.7);
+        /* backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px); */
     }
     header nav a {
         height: 100%;
@@ -38,24 +101,39 @@
         justify-content: center;
         gap: 5px;
         position: relative;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
-    header nav a.active::after {
+    header nav a.active::before {
         content: "";
-        width: 50px;
-        height: 1px;
+        width: 100%;
+        height: 5px;
         position: absolute;
         background-color: var(--second-Color);
-        top: 0px;
-        left: 50%;
         transform: translateX(-50%);
+        top: 0;
+        z-index: 1;
+        left: 55%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+    header nav::after {
+        content: "";
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        background-color: var(--product-info-background);
+        top: 0;
+        z-index: 0;
     }
     header nav a.active i,
     header nav a.active {
         color: var(--second-Color);
+        font-weight: bolder;
     }
     header nav a.active i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     header .info {
         width: fit-content;
@@ -203,14 +281,32 @@
 
 /* START INTRO COMPANY */
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
+    .intro-company .intro .text {
+        padding: 10px;
+    }
+    .intro-company .intro .text h1 {
+        font-size: 12px;
+    }
+    .intro-company .intro .text h2 {
+        font-size: 10px;
+    }
+    .intro-company .intro .text h2 i {
+        font-size: 0.6rem;
+    }
+    .intro-company .intro .text #shop {
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
     .intro-company .intro {
         height: 40%;
         justify-content: center;
         gap: 5px;
     }
     .intro-company .intro .text {
-        padding: 20px 10px;
         justify-content: center;
     }
     .intro-company .intro .text h1 {
@@ -228,39 +324,17 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
-    .hero-one {
-        right: -100%;
-        width: 90%;
-        top: 25%;
-    }
-    .hero-one#coming {
-        right: -35%;
-    }
-    .hero-two {
-        width: 90%;
-        left: -100%;
-        top: 10%;
-    }
-    .hero-two#coming {
-        left: -55%;
-    }
-    .hero-three {
-        bottom: 0%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        display: none;
-    }
-}
-
 
 /* END INTRO COMPANY */
 
 
 /* START DISCOUNT */
+
+@media (max-height: 970px) {
+    #discount {
+        height: initial;
+    }
+}
 
 @media (max-width: 768px) {
     #discount .text-intro {
@@ -312,3 +386,133 @@
 
 
 /* END DISCOUNT */
+
+
+/* Start Shop Now  */
+
+@media (max-height: 900px) {
+    #shop-now {
+        height: initial;
+    }
+}
+
+
+/* End Shop Now  */
+
+
+/* Start About  */
+
+
+/* Start About  */
+
+@media (max-width: 768px) {
+     :is(#about .container .about-logo) #wernech,
+    #marcus {
+        display: NONE;
+    }
+    #about .container .about-logo .img-logo {
+        width: 140px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1px;
+    }
+    .container .about-logo .img-logo img {
+        height: 70%;
+        padding: 0;
+    }
+}
+
+@media (max-height: 900px) {
+    .container .about-logo .img-logo img {
+        padding: 25px;
+    }
+}
+
+@media (min-height: 2000px) {
+    .container .about-logo,
+    .container .about-text {
+        height: 30% !important;
+    }
+}
+
+@media (max-width: 992px) {
+    #about .container .about-text {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Start Contact Me */
+
+@media (max-width: 768px) {
+    #contact-me form h1 {
+        font-size: 1.5rem;
+    }
+    #contact-me form p {
+        font-size: 0.8rem;
+        line-height: 1.1;
+    }
+    #contact-me form input {
+        font-size: 10px !important;
+        padding: 10px !important;
+    }
+    #contact-me form input:last-of-type {
+        margin-top: 10px;
+    }
+}
+
+
+/* End Contact Me */
+
+
+/* Start Footer */
+
+@media (max-width: 767px) {
+    footer div h1 {
+        font-size: 18px;
+    }
+    footer div ul li {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    footer .social {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4%;
+        row-gap: 10px;
+    }
+    footer .social i,
+    footer .address address i {
+        font-size: 30px;
+    }
+    footer .address address {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    footer {
+        padding: 30px;
+        margin-bottom: 100vh;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    footer div {
+        width: initial;
+    }
+    footer .social {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4%;
+        row-gap: 10px;
+    }
+    footer .social a {
+        width: 48%;
+        text-align: center;
+    }
+}
+
+
+/* End Footer */
