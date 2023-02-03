@@ -1,7 +1,6 @@
 import { Product } from "./classProduct.js";
 const parent_discount = main.querySelector("#discount .swiper-wrapper");
 const shop_now = main.querySelector("#shop-now .all-products");
-
 export let data = await getData("./src/data.json");
 createAllProducts(await data);
 

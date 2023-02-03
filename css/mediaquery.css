@@ -443,6 +443,25 @@
     }
 }
 
+@media (max-width: 992px) {
+     :is(#about .container .about-logo) #wernech {
+        left: 58%;
+        transform: translate(-50%, 7%);
+        -webkit-transform: translate(-50%, 7%);
+        -moz-transform: translate(-50%, 7%);
+        -ms-transform: translate(-50%, 7%);
+        -o-transform: translate(-50%, 7%);
+    }
+     :is(#about .container .about-logo) #marcus {
+        left: 40%;
+        transform: translate(-50%, 9%);
+        -webkit-transform: translate(-50%, 9%);
+        -moz-transform: translate(-50%, 9%);
+        -ms-transform: translate(-50%, 9%);
+        -o-transform: translate(-50%, 9%);
+    }
+}
+
 
 /* Start Contact Me */
 
