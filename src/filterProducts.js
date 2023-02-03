@@ -26,7 +26,6 @@ createAllProducts().then(() => {
     }
     // Filtering By Value Input Search
     function bySearch(data, val) {
-        console.log(data, "By Search");
         return data.filter((product) => {
             const productName =
                 val && product.name.slice(0, val.length).toLowerCase();
@@ -35,7 +34,6 @@ createAllProducts().then(() => {
     }
     // Filter By Platform
     function byPlatform(data) {
-        console.log(data, "By platform");
         const platform = shop.querySelector("#platform").value;
         return data.filter(
             (product) => product.platform == platform || platform == "all"
