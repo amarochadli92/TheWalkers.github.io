@@ -860,6 +860,7 @@ button {
 .intro-company .intro .text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: var(--product-info-background);
     padding: 50px;
     border-top-left-radius: 15px;
