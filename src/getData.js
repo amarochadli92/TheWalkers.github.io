@@ -1,3 +1,4 @@
+import { addToCart } from "./index.js";
 import { Product } from "./classProduct.js";
 const parent_discount = main.querySelector("#discount .swiper-wrapper");
 const shop_now = main.querySelector("#shop-now .all-products");
@@ -18,6 +19,7 @@ export async function createAllProducts() {
 export async function createProduct(data, parent) {
     parent.innerHTML = "";
     data.forEach((product) => new Product(product, parent).create());
+    addToCart();
 }
 
 function getDiscount(data) {

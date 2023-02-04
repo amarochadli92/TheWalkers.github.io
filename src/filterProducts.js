@@ -1,4 +1,5 @@
 import { createAllProducts, data, createProduct } from "./getData.js";
+
 const shop = main.querySelector("#shop-now"),
     allProducts = shop.querySelector(".all-products");
 

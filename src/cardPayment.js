@@ -3,7 +3,7 @@ const card_payment = document.querySelector(".card-payment");
 let all_validation = [];
 
 // ON CLICK SHOW CARD PAYMENT FOR PAYMENT
-cart_buy.querySelector(".payment").onclick = () => toggleCardPayment();
+document.querySelector(".payment").onclick = () => toggleCardPayment();
 
 function toggleCardPayment() {
     // GET ELEMENT DOM

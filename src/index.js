@@ -3,7 +3,7 @@ import { createAllProducts } from "./getData.js";
 
 // Get Element
 const cart_btn = document.querySelector(".cart");
-const cart_buy = document.querySelector(".cart-buy");
+export const cart_buy = document.querySelector(".cart-buy");
 
 // After Fulfilled Data Run
 createAllProducts().then(() => addToCart());
@@ -11,14 +11,13 @@ createAllProducts().then(() => addToCart());
 // Check If Cart btn clicked
 cart_btn.onclick = () => check() && showCart();
 
-function addToCart() {
+export function addToCart() {
     const btn_add = document.querySelectorAll(".add-to-cart");
     btn_add.forEach(
         (btn) => (btn.onclick = () => duplicates(btn.dataset) && add(btn.dataset))
     );
 
     function add(data) {
-        alert("l");
         let product = ProductNode(data); // GET HTML MARKUP FOR PRODUCT WE ADD IN THE CART
         document.querySelector(".cart-products").innerHTML += product; // ADD PRODUCT TO THE CART
     }
@@ -144,5 +143,3 @@ function getParentElement(ele, steps) {
 function check() {
     return !card_payment.hasAttribute("selected");
 }
-
-export { cart_buy };

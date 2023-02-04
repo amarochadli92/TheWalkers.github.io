@@ -77,17 +77,6 @@
     },
     {
         "id": 7,
-        "name": "Nintendo Switch",
-        "discount": 10,
-        "currency": "$",
-        "price": 500,
-        "platform": "Nintendo Switch",
-        "img": "img/product/switch.png",
-        "quantity": 10,
-        "categories": "Devices"
-    },
-    {
-        "id": 8,
         "name": "Resident Evil 2",
         "discount": 10,
         "currency": "$",
@@ -98,7 +87,7 @@
         "categories": "Games"
     },
     {
-        "id": 9,
+        "id": 8,
         "name": "Lan Switch",
         "discount": false,
         "currency": "$",
@@ -109,7 +98,7 @@
         "categories": "Accessories"
     },
     {
-        "id": 10,
+        "id": 9,
         "name": "Mario",
         "discount": false,
         "currency": "$",
@@ -120,7 +109,7 @@
         "categories": "Games"
     },
     {
-        "id": 11,
+        "id": 10,
         "name": "Halo 5",
         "discount": false,
         "currency": "$",
@@ -131,7 +120,7 @@
         "categories": "Games"
     },
     {
-        "id": 12,
+        "id": 11,
         "name": "Xbox One",
         "discount": false,
         "currency": "$",
